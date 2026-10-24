@@ -107,9 +107,10 @@ PX = [
     },
     {
         'title': 'PX3. Chất vào/ra trong Kc',
-        'formula': ('[C]^c[D]^d', '[A]^a[B]^b'),
+        'formula': (r'K_c = \dfrac{[C]^c\,[D]^d}{[A]^a\,[B]^b}', 'Kc = [C]^c[D]^d / ([A]^a[B]^b)'),
         'theory': 'Với phản ứng aA + bB ⇌ cC + dD, hằng số cân bằng Kc tính theo công thức dưới đây, dùng nồng độ mol/L lúc cân bằng: sản phẩm ở tử, chất đầu ở mẫu, hệ số tỉ lượng thành số mũ. Chất rắn không có mặt trong Kc. Kc chỉ phụ thuộc nhiệt độ và bản chất phản ứng.',
         'vd': ['Lò nung vôi: CaCO₃(s) ⇌ CaO(s) + CO₂(g) có Kc = [CO₂]. Bỏ thêm bao nhiêu đá vôi vào bình kín thì nồng độ CO₂ lúc cân bằng vẫn như cũ, vì "độ đặc" của một cục đá vôi không đổi dù cục to hay nhỏ.'],
+        'example': {'title': 'Ví dụ mẫu: viết biểu thức Kc', 'items': ['N₂(g) + 3H₂(g) ⇌ 2NH₃(g): NH₃ là sản phẩm nên lên tử, số mũ 2; N₂ và H₂ xuống mẫu, H₂ có số mũ 3.', {'formula': ('K_c = \\dfrac{[\\mathrm{NH_3}]^2}{[\\mathrm{N_2}]\\,[\\mathrm{H_2}]^3}', 'Kc = [NH₃]² / ([N₂][H₂]³)')}, 'C(s) + CO₂(g) ⇌ 2CO(g): C là chất rắn nên không có mặt trong Kc.', {'formula': ('K_c = \\dfrac{[\\mathrm{CO}]^2}{[\\mathrm{CO_2}]}', 'Kc = [CO]² / [CO₂]')}]},
         'reflex': ['Đọc đề thấy phương trình có chất ghi (s) thì nghĩ ngay: bỏ chất đó khỏi Kc; lượng chất rắn (miễn là còn) không ảnh hưởng đến cân bằng.', 'Đọc đề thấy phương trình bị viết ngược chiều thì nghĩ ngay: Kc mới là nghịch đảo của Kc cũ.'],
         'trap': ['Đưa chất rắn vào biểu thức Kc.', 'Quên số mũ, hoặc nêu giá trị Kc mà không kèm phương trình cụ thể.'],
         'passage': [
@@ -149,6 +150,7 @@ PX = [
         'title': 'PX4. Tính Kc bằng bảng ICE',
         'theory': 'Bảng ICE gồm ba dòng: Ban đầu (Initial), Phản ứng (Change), Cân bằng (Equilibrium). Dòng phản ứng luôn theo đúng tỉ lệ hệ số: chất đầu trừ, sản phẩm cộng. Biết đủ nồng độ lúc cân bằng thì tính được Kc; biết Kc thì đặt ẩn x ở dòng phản ứng rồi giải phương trình.',
         'vd': ['Bảng ICE giống sổ thu chi: dòng đầu là số tiền có sẵn, dòng giữa là các khoản thu, chi (luôn theo đúng tỉ lệ đã thỏa thuận), dòng cuối là số tiền còn lại.'],
+        'example': {'title': 'Ví dụ mẫu: bảng ICE', 'items': ['Cho 1,0 mol H₂ và 1,0 mol I₂ vào bình kín 10 L ở 445 °C. Khi cân bằng, trong bình có 1,6 mol HI. Phản ứng: H₂(g) + I₂(g) ⇌ 2HI(g).', {'rows': [['Nồng độ (mol/L)', 'H₂', 'I₂', 'HI'], ['Ban đầu (I)', '0,10', '0,10', '0'], ['Phản ứng (C)', '−0,08', '−0,08', '+0,16'], ['Cân bằng (E)', '0,02', '0,02', '0,16']]}, 'Cách điền: dòng (I) lấy số mol chia thể tích bình. Dòng (E) có sẵn [HI] = 1,6 : 10 = 0,16 M, nên ở dòng (C) HI tăng 0,16 M. Theo tỉ lệ hệ số 1 : 1 : 2, H₂ và I₂ mỗi chất giảm 0,16 : 2 = 0,08 M. Lấy (I) cộng (C) được dòng (E).', {'formula': ('K_c = \\dfrac{[\\mathrm{HI}]^2}{[\\mathrm{H_2}]\\,[\\mathrm{I_2}]} = \\dfrac{0{,}16^2}{0{,}02 \\times 0{,}02} = 64', 'Kc = [HI]² / ([H₂][I₂]) = 0,16² / (0,02 × 0,02) = 64')}]},
         'reflex': ['Đọc đề cho lượng ban đầu và lượng một chất lúc cân bằng thì nghĩ ngay: lập ICE, suy ra các chất còn lại theo hệ số.', 'Đọc đề cho Kc và lượng ban đầu thì nghĩ ngay: đặt x ở dòng phản ứng, thay vào Kc, giải phương trình, chọn nghiệm làm mọi nồng độ đều dương.'],
         'trap': ['Thay số mol vào Kc khi thể tích bình khác 1 L.', 'Tưởng tăng lượng chất ban đầu thì Kc tăng theo.', 'Tưởng Kc không đổi thì phần trăm chuyển hóa cũng không đổi.'],
         'passage': [
@@ -215,6 +217,7 @@ PX = [
         'title': 'PX6. So Q với Kc để biết chiều phản ứng',
         'theory': 'Q dùng đúng công thức của Kc nhưng thay vào nồng độ ở thời điểm bất kỳ, kể cả khi chưa cân bằng. Kc là giá trị riêng của Q lúc hệ cân bằng. Q thay đổi theo thời gian, Kc cố định ở mỗi nhiệt độ. Q < Kc thì hệ chạy chiều thuận; Q > Kc thì hệ chạy chiều nghịch; Q = Kc thì hệ đang cân bằng.',
         'vd': ['Q giống nhiệt độ phòng lúc này, Kc giống nhiệt độ cài trên điều hòa: máy luôn chạy theo hướng kéo nhiệt độ phòng về đúng mức đã cài, và dừng khi hai số bằng nhau.'],
+        'example': {'title': 'Ví dụ mẫu: dùng Q để đoán chiều phản ứng', 'items': ['Phản ứng N₂O₄(g) ⇌ 2NO₂(g) có Kc = 0,036 ở nhiệt độ T. Một bình ở nhiệt độ T đang có [N₂O₄] = 0,10 M và [NO₂] = 0,030 M.', {'formula': ('Q = \\dfrac{[\\mathrm{NO_2}]^2}{[\\mathrm{N_2O_4}]} = \\dfrac{0{,}030^2}{0{,}10} = 0{,}009', 'Q = [NO₂]² / [N₂O₄] = 0,030² / 0,10 = 0,009')}, 'Q = 0,009 nhỏ hơn Kc = 0,036 nên phản ứng chạy theo chiều thuận: N₂O₄ phân hủy thêm thành NO₂ cho đến khi Q tăng lên bằng 0,036.']},
         'reflex': ['Đọc đề cho nồng độ tại một thời điểm và hỏi "phản ứng sẽ chạy chiều nào" thì nghĩ ngay: tính Q rồi so với Kc.', 'Đọc đề thấy bình chỉ có chất đầu hoặc chỉ có sản phẩm thì nghĩ ngay: Q = 0 thì chạy thuận, Q lớn vô cùng thì chạy nghịch, không cần tính.'],
         'trap': ['Nhầm chiều so sánh: Q nhỏ hơn Kc là chạy thuận, không phải chạy nghịch.', 'Nhầm Q với Kc vì cùng công thức.'],
         'figs': ['Buoi 1/image/Q_va_K.png'],
@@ -257,3 +260,8 @@ DEBATE = [
     'Q và Kc dùng cùng một công thức, vậy vì sao lại là hai đại lượng khác nhau? (gợi ý: PX6)',
     'Kc rất lớn có nghĩa là phản ứng xảy ra nhanh không? (gợi ý: PX5, hỗn hợp H₂ và O₂)',
 ]
+
+
+def so_dong(q):
+    # Số dòng để trống cho HS viết: theo độ dài đáp án + giải thích, khoảng 60 ký tự chữ viết tay mỗi dòng
+    return max(3, -(-(len(q['ans']) + len(q['exp'])) // 60))

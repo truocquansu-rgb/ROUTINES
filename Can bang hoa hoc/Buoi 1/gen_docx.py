@@ -68,8 +68,9 @@ class Doc:
             e.set(qn('w:' + k), v)
         b.append(e); pPr.append(b)
 
-    def table(self, rows, label, cap):
-        self.para([('Bảng ' + label, 'b i'), (': ' + cap, 'i')], C)
+    def table(self, rows, label=None, cap=None):
+        if label:
+            self.para([('Bảng ' + label, 'b i'), (': ' + cap, 'i')], C)
         t = self.d.add_table(rows=len(rows), cols=len(rows[0])); t.style = 'Table Grid'
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         for i, row in enumerate(rows):
@@ -95,6 +96,25 @@ class Doc:
             self.runs(p, 'Hình %d' % n, 'b i', 10); self.runs(p, ': ' + ten + '.', 'i', 10)
             p = cell.add_paragraph(); p.alignment = C
             self.runs(p, 'Nguồn: ' + nguon, 'i gray', 9)
+
+    def formula(self, text):
+        # Công thức căn giữa; ^a..^d là số mũ chữ, chỉ số Unicode do runs() xử lý
+        p = self.d.add_paragraph(); p.alignment = C
+        for part in re.split(r'(\^[a-d])', text):
+            if part.startswith('^'):
+                r = p.add_run(part[1:]); r.bold = True; r.font.superscript = True
+            elif part:
+                self.runs(p, part, 'b')
+
+    def example(self, ex):
+        self.para([('Ví dụ mẫu: ', 'b blue'), (ex['title'].split(': ', 1)[1], 'b blue')], L)
+        for it in ex['items']:
+            if isinstance(it, str):
+                self.para([(it, '')], indent=0.4)
+            elif 'rows' in it:
+                self.table(it['rows'])
+            else:
+                self.formula(it['formula'][1])
 
     def save(self, name):
         out = os.path.join(HERE, name); self.d.save(out); return out
@@ -125,13 +145,11 @@ def build(gv):
         p = D.para([(code + '. ', 'b red'), (name, 'b red')], L, 13); D.border_bottom(p)
         D.para([('Lý thuyết: ', 'b'), (px['theory'], '')])
         if 'formula' in px:
-            num, den = px['formula']
-            p = D.d.add_paragraph(); p.alignment = C
-            for part in re.split(r'(\^[a-d])', 'Kc = ' + num + ' / ' + den):
-                r = p.add_run(part[1:] if part.startswith('^') else part); r.bold = True
-                r.font.superscript = part.startswith('^')
+            D.formula(px['formula'][1])
         for v in px['vd']:
             D.para([('VD: ', 'b'), (v, '')])
+        if px.get('example'):
+            D.example(px['example'])
         figs = px.get('figs', [])
         for row in (figs if figs and isinstance(figs[0], list) else [figs] if figs else []):
             D.figures(row)
@@ -156,6 +174,9 @@ def build(gv):
         D.para([('Câu hỏi:', 'b')], L)
         for i, q in enumerate(px['questions'], 1):
             D.para([('(%d) ' % i, 'b org'), (q['q'], '')])
+            if not gv:
+                for _ in range(S.so_dong(q)):
+                    D.d.add_paragraph()
             if gv:
                 D.para([('▸ Đáp án: ', 'b grn'), (q['ans'], 'grn')])
                 D.para([('▸ Giải thích: ', 'b grn'), (q['exp'], 'grn')])

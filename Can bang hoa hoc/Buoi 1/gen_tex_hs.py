@@ -33,14 +33,14 @@ def tx(s):
     return s
 
 
-def table(rows, label, cap):
+def table(rows, label=None, cap=None):
     n = len(rows[0])
     longest = [max(len(r[j]) for r in rows) for j in range(n)]
     if sum(longest) > 70:
         tot = sum(longest); spec = '|'.join(r'>{\raggedright\arraybackslash}p{%.2f\textwidth}' % (0.9 * l / tot) for l in longest)
     else:
         spec = '|'.join('c' * n)
-    L = [r'\Needspace{5cm}', r'\tablecaption{%s}{%s}' % (label, tx(cap)), r'{\small', r'\begin{center}',
+    L = [r'\Needspace{5cm}'] + ([r'\tablecaption{%s}{%s}' % (label, tx(cap))] if label else []) + [r'{\small', r'\begin{center}',
          r'\renewcommand{\arraystretch}{1.3}', r'\begin{tabular}{|%s|}' % spec, r'\hline',
          r'\rowcolor{pastelBlue}', ' & '.join(r'\textbf{%s}' % tx(c) for c in rows[0]) + r' \\', r'\hline']
     for r in rows[1:]:
@@ -88,10 +88,21 @@ def build():
         out.append(r'\pxtitle{%s}' % tx(px['title']))
         out.append(r'\textbf{Lý thuyết:} %s' % tx(px['theory']) + '\n')
         if 'formula' in px:
-            num, den = px['formula']
-            out.append(r'\[ K_c = \dfrac{%s}{%s} \]' % (num, den))
+            out.append(r'\[ %s \]' % px['formula'][0])
         for v in px['vd']:
             out.append(r'\textbf{VD:} %s' % tx(v) + '\n')
+        if px.get('example'):
+            ex = px['example']
+            out.append(r'\Needspace{11cm}')  # giữ trọn khung ví dụ mẫu trên một trang
+            out.append(r'\begin{keybox}{\color{primaryBlue}\textbf{%s}}\par' % tx(ex['title']))
+            for it in ex['items']:
+                if isinstance(it, str):
+                    out.append(tx(it) + '\n')
+                elif 'rows' in it:
+                    out.append(table(it['rows']))
+                else:
+                    out.append(r'\[ %s \]' % it['formula'][0])
+            out.append(r'\end{keybox}')
         figs = px.get('figs', [])
         for row in (figs if figs and isinstance(figs[0], list) else [figs] if figs else []):
             out.append(figures(row, used))
@@ -118,7 +129,9 @@ def build():
         out.append(r'\qhead')
         out.append(r'\begin{enumerate}[label={}, leftmargin=0.5em, itemsep=6pt]')
         for i, q in enumerate(px['questions'], 1):
-            out.append(r'\item \textbf{(%d)} %s' % (i, tx(fig_ref(q['q']))))
+            n = S.so_dong(q)
+            out.append(r'\Needspace{%d\baselineskip}' % (n + 3))
+            out.append(r'\item \textbf{(%d)} %s \answerlines{%d}' % (i, tx(fig_ref(q['q'])), n))
         out.append(r'\end{enumerate}')
     open(os.path.join(BUILD, 'Phan thi', 'buoi1.tex'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 
