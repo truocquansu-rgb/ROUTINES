@@ -7,8 +7,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 ROWS = [
     ['Hình 1.1. Tốc độ phản ứng thuận, nghịch theo thời gian', 'Buổi 1 / PX2', '✓ Đã làm nét', 'SGK Hóa học 11, KNTT', ''],
     ['Đồ thị nồng độ đi tới cân bằng từ hai phía', 'Buổi 1 / bài giảng PX1–PX2', '✓ Vẽ bằng matplotlib theo số liệu PX1 (Kc = 64)', 'P20 STUDY vẽ; tham khảo SCH 4U Strand 3, Unit 5 Chemical Equilibrium', 'Chỉ dùng trong bài giảng, không đặt trong PX1 (lộ đáp án ý 4)'],
-    ['Thạch nhũ và măng đá', 'Buổi 1 / PX1', 'Chờ Gemini dịch nhãn', 'Voarintsoa, N. R. G., ResearchGate, Figure 7 (Việt hóa)', 'Cắt tay phần chú thích tiếng Anh dưới hình trước khi gửi Gemini'],
-    ['Vòi nước (cân bằng động) và bập bênh (cân bằng tĩnh)', 'Buổi 1 / PX2', 'Chờ Gemini vẽ lại theo mẫu', 'Vẽ lại theo mẫu: "Equilibria (IB or A level chemistry)", Lmbroomfield, tes.com; bập bênh: world-builders.org', 'Tài liệu gốc trả phí, chỉ dùng làm mẫu bố cục'],
+    ['Thạch nhũ và măng đá', 'Buổi 1 / PX1', '✓ Đã Việt hóa, làm nét', 'Voarintsoa, N. R. G., ResearchGate, Figure 7 (Việt hóa)', 'Cắt tay phần chú thích tiếng Anh dưới hình trước khi gửi Gemini'],
+    ['Vòi nước (cân bằng động) và bập bênh (cân bằng tĩnh)', 'Buổi 1 / PX2', '✓ Đã vẽ lại theo mẫu', 'Vẽ lại theo mẫu: "Equilibria (IB or A level chemistry)", Lmbroomfield, tes.com; bập bênh: world-builders.org', 'Tài liệu gốc trả phí, chỉ dùng làm mẫu bố cục'],
     ['Hình 1.2. Nhiệt độ và cân bằng 2NO₂ ⇌ N₂O₄', 'Buổi 2 / PX9', '✓ Đã làm nét', 'SGK Hóa học 11, KNTT', 'Nền tím xám, lệch tông với 1.3, 1.4'],
     ['Hình 1.3. Nhiệt độ và cân bằng thủy phân CH₃COONa', 'Buổi 2 / PX9', '✓ Đã làm nét', 'SGK Hóa học 11, KNTT', 'Ống (2) gần cùng màu ống (1); nói rõ khi giảng'],
     ['Hình 1.4. Nồng độ và cân bằng thủy phân CH₃COONa', 'Buổi 2 / PX7', '✓ Đã làm nét', 'SGK Hóa học 11, KNTT', ''],
