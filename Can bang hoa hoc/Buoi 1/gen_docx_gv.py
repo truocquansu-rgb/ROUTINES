@@ -7,8 +7,12 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE); sys.path.insert(0, ROOT)
 from buoi1_spec import TITLE, LESSON, PX, DEBATE
+from anh_chuyen_de import so_hinh
+from PIL import Image
+FIG = so_hinh()
 
 RED, ORANGE, GRAY, GREEN = (RGBColor(0xEE, 0, 0), RGBColor(0xFF, 0x80, 0),
                             RGBColor(0x80, 0x80, 0x80), RGBColor(0, 0x80, 0))
@@ -49,6 +53,18 @@ def table(rows):
     doc.add_paragraph()
 
 
+def figure(path, gv_note=True):
+    b, n, ten, nguon, note = FIG[path]
+    w, h = Image.open(os.path.join(ROOT, path)).size
+    width = 6.5 if h > 1.2 * w else (11 if h > 0.6 * w else 15)
+    p = doc.add_paragraph(); p.alignment = C
+    p.add_run().add_picture(os.path.join(ROOT, path), width=Cm(width))
+    para([('Hình %d' % n, 'b i'), (': ' + ten + '.', 'i')], C)
+    para([('Nguồn: ' + nguon, 'i')], R, 10)
+    if gv_note and note:
+        para([('Ghi chú GV: ' + note, 'i gray')], L, 10)
+
+
 para([(TITLE, 'b')], C, 14)
 para([(LESSON, 'b red')], C, 13)
 para([('Bản GV [SOURCE]: bài tập phản xạ PX1–PX6, đáp án và giải thích ngay sau từng ý', 'i gray')], C, 10)
@@ -59,10 +75,16 @@ for px in PX:
     para([('Ý cần giảng (GV):', 'b i gray')], L, 10)
     for t in px['teach']:
         para([('• ' + t, 'i gray')], L, 10)
+    if px.get('figs'):
+        para([('Hình minh họa khi giảng:', 'b i gray')], L, 10)
+        for f in px['figs']:
+            figure(f)
     para([('Ngữ liệu lạ', 'b i')], L)
     for b in px['passage']:
         if isinstance(b, str):
             para([(b, '')], J)
+        elif 'fig' in b:
+            figure(b['fig'], gv_note=False)
         else:
             para([('Bảng ' + b['label'], 'b i'), (': ' + b['cap'], 'i')], C)
             table(b['rows'])

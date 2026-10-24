@@ -24,33 +24,45 @@ ANH = [
     (3, 'Đề 2', None, 'Sơ đồ dây chuyền tổng hợp NH₃ (vòng tuần hoàn)', 'Vẽ lại theo mẫu: "Equilibria (IB or A level chemistry)", Lmbroomfield, tes.com', 'Sửa ΔH về −91,8 kJ theo SGK'),
 ]
 
-SAFE = str.maketrans({'₂': '2', '₃': '3', '₄': '4', '⇌': '-', '/': '-', ':': ' -'})
-idx, cho, so = ['THỨ TỰ HÌNH, VỊ TRÍ DÙNG VÀ NGUỒN', ''], [], {}
-with zipfile.ZipFile('Cân bằng hóa học - Ảnh đã duyệt.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+
+def so_hinh():
+    # {file: (buổi, số hình trong buổi, tên, nguồn, ghi chú)}
+    out, so = {}, {}
     for b, px, f, ten, nguon, note in ANH:
         so[b] = so.get(b, 0) + 1
-        name = 'Buổi %d/Hình %d - %s - %s' % (b, so[b], px, ten.translate(SAFE))
-        if f and os.path.exists(f):
-            z.write(f, name + '.png')
-            idx += [name, '   Nguồn: ' + nguon + ('\n   Ghi chú: ' + note if note else '')]
-        else:
-            cho.append(name)
-    idx += ['', 'Còn chờ:'] + ['   ' + c for c in cho]
-    z.writestr('Thứ tự hình và nguồn.txt', '\n'.join(idx))
-print('\n'.join(idx))
+        if f: out[f] = (b, so[b], ten, nguon, note)
+    return out
 
-doc = Document()
-st = doc.styles['Normal']; st.font.name = 'Times New Roman'; st.font.size = Pt(11)
-st.element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
-s = doc.sections[0]; s.page_width, s.page_height = Cm(29.7), Cm(21)
-s.top_margin = s.bottom_margin = s.left_margin = s.right_margin = Cm(2)
-p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-r = p.add_run('CHUYÊN ĐỀ CÂN BẰNG HÓA HỌC: DANH SÁCH ẢNH VÀ NGUỒN'); r.bold = True; r.font.size = Pt(14)
-t = doc.add_table(rows=1, cols=6); t.style = 'Table Grid'
-for c, h in zip(t.rows[0].cells, ['Buổi', 'Dùng ở', 'Ảnh', 'Trạng thái', 'Nguồn', 'Ghi chú']):
-    c.text = ''; c.paragraphs[0].add_run(h).bold = True
-for b, px, f, ten, nguon, note in ANH:
-    ok = bool(f and os.path.exists(f))
-    for c, v in zip(t.add_row().cells, [str(b), px, ten, '✓ Đã duyệt' if ok else 'Chờ', nguon, note]): c.text = v
-doc.add_paragraph().add_run('Cách ghi nguồn dưới hình: "Nguồn: SGK Hóa học 11, KNTT". Ảnh nước ngoài ghi tác giả hoặc trang gốc, kèm "Việt hóa" hoặc "vẽ lại theo mẫu".').italic = True
-doc.save('Danh sách ảnh và nguồn.docx')
+
+if __name__ == '__main__':
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    SAFE = str.maketrans({'₂': '2', '₃': '3', '₄': '4', '⇌': '-', '/': '-', ':': ' -'})
+    idx, cho, so = ['THỨ TỰ HÌNH, VỊ TRÍ DÙNG VÀ NGUỒN', ''], [], {}
+    with zipfile.ZipFile('Cân bằng hóa học - Ảnh đã duyệt.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+        for b, px, f, ten, nguon, note in ANH:
+            so[b] = so.get(b, 0) + 1
+            name = 'Buổi %d/Hình %d - %s - %s' % (b, so[b], px, ten.translate(SAFE))
+            if f and os.path.exists(f):
+                z.write(f, name + '.png')
+                idx += [name, '   Nguồn: ' + nguon + ('\n   Ghi chú: ' + note if note else '')]
+            else:
+                cho.append(name)
+        idx += ['', 'Còn chờ:'] + ['   ' + c for c in cho]
+        z.writestr('Thứ tự hình và nguồn.txt', '\n'.join(idx))
+    print('\n'.join(idx))
+
+    doc = Document()
+    st = doc.styles['Normal']; st.font.name = 'Times New Roman'; st.font.size = Pt(11)
+    st.element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
+    s = doc.sections[0]; s.page_width, s.page_height = Cm(29.7), Cm(21)
+    s.top_margin = s.bottom_margin = s.left_margin = s.right_margin = Cm(2)
+    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = p.add_run('CHUYÊN ĐỀ CÂN BẰNG HÓA HỌC: DANH SÁCH ẢNH VÀ NGUỒN'); r.bold = True; r.font.size = Pt(14)
+    t = doc.add_table(rows=1, cols=6); t.style = 'Table Grid'
+    for c, h in zip(t.rows[0].cells, ['Buổi', 'Dùng ở', 'Ảnh', 'Trạng thái', 'Nguồn', 'Ghi chú']):
+        c.text = ''; c.paragraphs[0].add_run(h).bold = True
+    for b, px, f, ten, nguon, note in ANH:
+        ok = bool(f and os.path.exists(f))
+        for c, v in zip(t.add_row().cells, [str(b), px, ten, '✓ Đã duyệt' if ok else 'Chờ', nguon, note]): c.text = v
+    doc.add_paragraph().add_run('Cách ghi nguồn dưới hình: "Nguồn: SGK Hóa học 11, KNTT". Ảnh nước ngoài ghi tác giả hoặc trang gốc, kèm "Việt hóa" hoặc "vẽ lại theo mẫu".').italic = True
+    doc.save('Danh sách ảnh và nguồn.docx')

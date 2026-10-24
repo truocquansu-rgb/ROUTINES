@@ -13,6 +13,7 @@ PX = [
             'Phản ứng thuận nghịch: trong cùng điều kiện, chiều thuận và chiều nghịch xảy ra đồng thời, ký hiệu ⇌.',
             'Hệ quả: phản ứng thuận nghịch không bao giờ xảy ra hoàn toàn, luôn còn lại cả chất đầu lẫn sản phẩm.',
         ],
+        'figs': ['Buoi 1/image/hang_dong_phong_nha.png', 'Buoi 1/image/thach_nhu.png', 'Buoi 1/image/do_thi_nong_do_hai_chieu.png'],
         'passage': [
             'Cho 3,0 mol khí HI vào một bình kín dung tích 10 L, giữ ở 445 °C. Sau 1 giờ, 1 ngày rồi 1 tuần, kết quả phân tích khí trong bình luôn giống nhau: 2,4 mol HI; 0,3 mol H₂ và 0,3 mol I₂.',
             'Ở một bình kín khác cùng dung tích và cùng nhiệt độ, người ta cho 1,5 mol H₂ và 1,5 mol I₂, không có HI. Sau một thời gian, trong bình đo được 0,3 mol H₂.',
@@ -48,6 +49,7 @@ PX = [
             'Khi v(thuận) = v(nghịch), lượng mỗi chất không còn đổi: hệ đạt trạng thái cân bằng.',
             'Cân bằng là cân bằng động: hai chiều vẫn chạy, chỉ là chạy với tốc độ bằng nhau.',
         ],
+        'figs': ['Buoi 1/image/hinh_1_1.png', 'Buoi 1/image/voi_nuoc_bap_benh.png'],
         'passage': [
             'Cho 1,00 mol N₂ và 3,00 mol H₂ vào bình kín dung tích 1 L có xúc tác, giữ ở nhiệt độ không đổi. Số mol các chất được đo định kì và ghi trong Bảng 1.1.',
             {'cap': 'Số mol các chất trong bình theo thời gian.', 'label': '1.1',
@@ -94,6 +96,8 @@ PX = [
             '(c) C(s) + H₂O(g) ⇌ CO(g) + H₂(g)',
             '(d) Fe₃O₄(s) + 4H₂(g) ⇌ 3Fe(s) + 4H₂O(g)',
             'Ở 800 °C, phản ứng (b) có Kc ≈ 0,0025. Một chất rắn nguyên chất có khối lượng riêng xác định, nên số mol chất trong mỗi lít chất rắn là một hằng số, không phụ thuộc ta có nhiều hay ít chất rắn đó.',
+            'Trong công nghiệp, vôi sống được sản xuất trong lò nung vôi (Hình 6). Đá vôi đổ vào từ đỉnh lò, được nung nóng ở khoảng 900 °C đến 1000 °C; khí thải chứa CO₂ được quạt hút ra ngoài liên tục, vôi sống lấy ra ở đáy lò.',
+            {'fig': 'Buoi 1/image/lo_nung_voi.png'},
         ],
         'questions': [
             {'q': 'Viết biểu thức Kc của bốn phản ứng (a), (b), (c), (d).',
@@ -108,6 +112,10 @@ PX = [
              'n': 6,
              'ans': '0,025 mol CO₂. Lượng CaCO₃ gấp đôi thì số mol CO₂ vẫn là 0,025 mol.',
              'exp': 'Kc = [CO₂] = 0,0025 mol/L, nên n(CO₂) = 0,0025 × 10 = 0,025 mol. Nồng độ CO₂ lúc cân bằng chỉ do Kc quyết định, còn lượng chất rắn (miễn là còn dư) không có trong biểu thức nên không ảnh hưởng.'},
+            {'q': 'Trong lò nung vôi (Hình 6), CaCO₃ bị phân hủy gần hết thành vôi sống, còn trong bình kín ở ý (3) thì chỉ 0,025 mol CaCO₃ bị phân hủy. Dựa vào biểu thức Kc của phản ứng (b), giải thích vai trò của quạt hút.',
+             'n': 6,
+             'ans': 'Quạt hút đưa CO₂ ra khỏi lò liên tục nên [CO₂] trong lò luôn nhỏ hơn Kc. Hệ không bao giờ đạt cân bằng, nên CaCO₃ tiếp tục phân hủy đến gần hết.',
+             'exp': 'Với phản ứng (b), Kc = [CO₂]: cân bằng chỉ đạt được khi nồng độ CO₂ bằng đúng Kc. Trong bình kín, CO₂ tích tụ đến giá trị này thì phản ứng thuận và nghịch cân bằng nhau. Trong lò, CO₂ bị rút đi trước khi kịp đạt Kc, nên chiều phân hủy CaCO₃ luôn chiếm ưu thế. Đây cũng là cách công nghiệp "kéo" một phản ứng thuận nghịch đi gần hết: liên tục lấy sản phẩm ra khỏi hệ.'},
             {'q': 'Ở một nhiệt độ, phản ứng (a) có Kc = K. Viết biểu thức Kc của phản ứng 2SO₃(g) ⇌ 2SO₂(g) + O₂(g) và tính giá trị theo K.',
              'n': 4,
              'ans': 'Kc = [SO₂]²[O₂]/[SO₃]² = 1/K.',
@@ -153,6 +161,7 @@ PX = [
             'Kc rất nhỏ: lúc cân bằng gần như chỉ có chất đầu, phản ứng thuận hầu như không xảy ra.',
             'Kc cho biết đích đến, không cho biết đi nhanh hay chậm. Tốc độ là chuyện của động học.',
         ],
+        'figs': ['Buoi 1/image/no_bong_H2.png', 'Buoi 1/image/bo_xuc_tac_o_to.png'],
         'passage': [
             {'cap': 'Hằng số cân bằng của một số phản ứng.', 'label': '1.2',
              'rows': [['Phản ứng', 'Nhiệt độ', 'Kc (xấp xỉ)'],
@@ -188,6 +197,7 @@ PX = [
             'Kc là giá trị riêng của Q khi hệ cân bằng. Q thay đổi theo thời gian, Kc cố định ở mỗi nhiệt độ.',
             'Q < Kc: hệ chạy chiều thuận. Q > Kc: hệ chạy chiều nghịch. Q = Kc: hệ đang cân bằng. Phản ứng luôn chạy theo chiều đưa Q về Kc.',
         ],
+        'figs': ['Buoi 1/image/Q_va_K.png'],
         'passage': [
             'Ở 445 °C, phản ứng H₂(g) + I₂(g) ⇌ 2HI(g) có Kc = 64. Người ta chuẩn bị bốn bình kín, mỗi bình dung tích 1 L, cùng giữ ở 445 °C, với nồng độ các chất tại thời điểm bắt đầu quan sát như Bảng 1.3.',
             {'cap': 'Nồng độ các chất (mol/L) trong bốn bình tại thời điểm bắt đầu quan sát.', 'label': '1.3',
