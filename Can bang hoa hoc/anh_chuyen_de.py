@@ -24,7 +24,7 @@ ANH = [
     (3, 'Đề 2', None, 'Sơ đồ dây chuyền tổng hợp NH₃ (vòng tuần hoàn)', 'Vẽ lại theo mẫu: "Equilibria (IB or A level chemistry)", Lmbroomfield, tes.com', 'Sửa ΔH về −91,8 kJ theo SGK'),
 ]
 
-SAFE = str.maketrans({'₂': '2', '₃': '3', '⇌': '-', '/': '-', ':': ' -'})
+SAFE = str.maketrans({'₂': '2', '₃': '3', '₄': '4', '⇌': '-', '/': '-', ':': ' -'})
 idx, cho, so = ['THỨ TỰ HÌNH, VỊ TRÍ DÙNG VÀ NGUỒN', ''], [], {}
 with zipfile.ZipFile('Cân bằng hóa học - Ảnh đã duyệt.zip', 'w', zipfile.ZIP_DEFLATED) as z:
     for b, px, f, ten, nguon, note in ANH:
