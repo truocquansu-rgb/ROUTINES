@@ -10,9 +10,9 @@ KNTT = 'SGK Hóa học 11, KNTT'
 ANH = [
     (1, 'PX1', 'Buoi 1/image/hang_dong_phong_nha.png', 'Hang động có thạch nhũ (mở bài)', 'VOV, "New cave found in Vietnam\'s Phong Nha-Ke Bang reveals rare geological wonders"', ''),
     (1, 'PX1', 'Buoi 1/image/thach_nhu.png', 'Thạch nhũ và măng đá, phản ứng thuận nghịch trong tự nhiên', 'Voarintsoa, N. R. G., ResearchGate, Figure 7 (Việt hóa)', ''),
-    (1, 'PX1', 'Buoi 1/image/do_thi_nong_do_hai_chieu.png', 'Đồ thị nồng độ đi tới cân bằng từ hai phía', 'P20 STUDY vẽ theo số liệu PX1; tham khảo SCH 4U Unit 5 Chemical Equilibrium', 'Chỉ dùng trong bài giảng, không đặt trong đề PX1'),
+    (1, 'PX1', 'Buoi 1/image/do_thi_nong_do_hai_chieu.png', 'Đồ thị nồng độ đi tới cân bằng từ hai phía', 'tham khảo SCH 4U, Unit 5 Chemical Equilibrium', 'Vẽ theo số liệu PX1. Chỉ dùng trong bài giảng, không đặt trong đề PX1'),
     (1, 'PX2', 'Buoi 1/image/hinh_1_1.png', 'Tốc độ phản ứng thuận và nghịch theo thời gian', KNTT, ''),
-    (1, 'PX2', 'Buoi 1/image/voi_nuoc_bap_benh.png', 'Cân bằng động (vòi nước) và cân bằng tĩnh (bập bênh)', 'Vẽ lại theo mẫu: "Equilibria (IB or A level chemistry)", Lmbroomfield, tes.com', 'Chốt ý sau hình tốc độ'),
+    (1, 'PX2', 'Buoi 1/image/voi_nuoc_bap_benh.png', 'Cân bằng động (vòi nước) và cân bằng tĩnh (bập bênh)', 'tham khảo Lmbroomfield, "Equilibria (IB or A level chemistry)", tes.com', 'Chốt ý sau hình tốc độ'),
     (1, 'PX3', 'Buoi 1/image/lo_nung_voi.png', 'Lò nung vôi: quạt hút CO₂ để CaCO₃ phân hủy gần hết', 'Wikipedia, "Lime kiln" (Việt hóa)', ''),
     (1, 'PX5', 'Buoi 1/image/no_bong_H2.png', 'Nổ bóng H₂: Kc rất lớn nhưng cần tia lửa', 'ThoughtCo, "Hydrogen Balloon Explosion"', ''),
     (1, 'PX5', 'Buoi 1/image/bo_xuc_tac_o_to.png', 'Bộ xúc tác trên đường ống xả ô tô', 'DLR elib (Việt hóa)', ''),
@@ -21,7 +21,7 @@ ANH = [
     (2, 'PX8', 'Buoi 2/image/hinh_1_5.png', 'Áp suất và cân bằng NO₂ trong xi-lanh', KNTT, 'Sau khi nén, màu nhạt bớt nhưng vẫn đậm hơn lúc chưa nén'),
     (2, 'PX9', 'Buoi 2/image/hinh_1_2.png', 'Nhiệt độ và cân bằng 2NO₂ ⇌ N₂O₄', KNTT, 'Dạy cặp với hình tiếp theo'),
     (2, 'PX9', 'Buoi 2/image/hinh_1_3.png', 'Nhiệt độ và cân bằng thủy phân CH₃COONa', KNTT, 'Ống (2) gần cùng màu ống (1), nói rõ khi giảng'),
-    (3, 'Đề 2', None, 'Sơ đồ dây chuyền tổng hợp NH₃ (vòng tuần hoàn)', 'Vẽ lại theo mẫu: "Equilibria (IB or A level chemistry)", Lmbroomfield, tes.com', 'Sửa ΔH về −91,8 kJ theo SGK'),
+    (3, 'Đề 2', None, 'Sơ đồ dây chuyền tổng hợp NH₃ (vòng tuần hoàn)', 'tham khảo Lmbroomfield, "Equilibria (IB or A level chemistry)", tes.com', 'Sửa ΔH về −91,8 kJ theo SGK'),
 ]
 
 
@@ -64,5 +64,5 @@ if __name__ == '__main__':
     for b, px, f, ten, nguon, note in ANH:
         ok = bool(f and os.path.exists(f))
         for c, v in zip(t.add_row().cells, [str(b), px, ten, '✓ Đã duyệt' if ok else 'Chờ', nguon, note]): c.text = v
-    doc.add_paragraph().add_run('Cách ghi nguồn dưới hình: "Nguồn: SGK Hóa học 11, KNTT". Ảnh nước ngoài ghi tác giả hoặc trang gốc, kèm "Việt hóa" hoặc "vẽ lại theo mẫu".').italic = True
+    doc.add_paragraph().add_run('Cách ghi nguồn dưới hình: "Nguồn: SGK Hóa học 11, KNTT". Ảnh nước ngoài ghi tác giả hoặc trang gốc, kèm "Việt hóa" hoặc ghi "tham khảo ...". Mỗi ảnh chỉ ghi 1 nguồn.').italic = True
     doc.save('Danh sách ảnh và nguồn.docx')

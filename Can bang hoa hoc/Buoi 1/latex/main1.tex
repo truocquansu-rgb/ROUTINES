@@ -1,0 +1,749 @@
+% ============================================================
+% TEMPLATE ĐỀ THI ĐÁNH GIÁ TƯ DUY (TSA)
+% Đại Học Bách Khoa Hà Nội - Trung Tâm P20 STUDY
+% Tương thích với pdfLaTeX (Overleaf)
+% ============================================================
+\documentclass[12pt,a4paper,twoside]{article}
+% Biên dịch bằng XeLaTeX (Overleaf: Menu -> Compiler -> XeLaTeX)
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage{fontspec}
+\usepackage{verbatim}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\usepackage{polyglossia}
+\setdefaultlanguage{vietnamese}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{varwidth}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{needspace}
+\usepackage{longtable}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{eso-pic}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% TikZ libraries
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc, shadows, backgrounds, decorations.pathmorphing}
+
+% tcolorbox libraries
+\tcbuselibrary{skins, breakable, hooks}
+
+% ============================================================
+% GEOMETRY SETUP
+% ============================================================
+\geometry{
+    left=2cm,
+    right=2cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=1.5cm,
+    headsep=0.8cm,
+    footskip=1.2cm
+}
+
+% ============================================================
+% COLOR DEFINITIONS - Blue Theme
+% ============================================================
+\definecolor{primaryBlue}{HTML}{1565C0}
+\definecolor{secondaryBlue}{HTML}{42A5F5}
+\definecolor{lightBlue}{HTML}{90CAF9}
+\definecolor{pastelBlue}{HTML}{E3F2FD}
+\definecolor{accentBlue}{HTML}{0D47A1}
+\definecolor{textDark}{HTML}{1A237E}
+\definecolor{grayLight}{HTML}{F5F5F5}
+\definecolor{borderGray}{HTML}{BDBDBD}
+
+% ============================================================
+% HEADER & FOOTER SETUP
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+% Custom header decorations
+\newcommand{\headerdecorleft}{%
+    \tikz[baseline=-0.5ex]{
+        \fill[primaryBlue] (0,0) circle (3pt);
+        \fill[secondaryBlue] (0.25,0) circle (2pt);
+        \fill[lightBlue] (0.45,0) circle (1.5pt);
+    }%
+}
+
+\newcommand{\headerdecorright}{%
+    \tikz[baseline=-0.5ex]{
+        \fill[lightBlue] (0,0) circle (1.5pt);
+        \fill[secondaryBlue] (0.2,0) circle (2pt);
+        \fill[primaryBlue] (0.45,0) circle (3pt);
+    }%
+}
+
+% Page number box
+\newcommand{\pagenumbox}{%
+    \tikz[baseline=-0.5ex]{
+        \node[draw=primaryBlue, fill=pastelBlue, rounded corners=3pt, 
+              inner sep=4pt, font=\small\bfseries, line width=0.8pt] 
+              {\color{primaryBlue}Trang \thepage};
+    }%
+}
+
+% Teacher info
+\newcommand{\teacherinfo}{%
+    {\color{textDark}\small\textit{Giáo viên: Nguyễn Nghĩa Đô}}%
+}
+
+% Separator
+\newcommand{\footersep}{%
+    \tikz[baseline=-0.5ex]{\fill[secondaryBlue] (0,0) circle (1.5pt);}%
+}
+
+% Odd pages
+\fancyhead[LO]{\headerdecorleft~~\color{primaryBlue}\textbf{Chuyên đề Cân bằng hóa học}}
+\fancyhead[RO]{\color{primaryBlue}\textbf{P20 STUDY}~~\headerdecorright}
+\fancyfoot[LO]{\pagenumbox~~\footersep}
+\fancyfoot[RO]{\footersep~~\teacherinfo}
+
+% Even pages
+\fancyhead[LE]{\headerdecorleft~~\color{primaryBlue}\textbf{Chuyên đề Cân bằng hóa học}}
+\fancyhead[RE]{\color{primaryBlue}\textbf{TSA - ĐH Bách Khoa Hà Nội}~~\headerdecorright}
+\fancyfoot[LE]{\teacherinfo~~\footersep}
+\fancyfoot[RE]{\footersep~~\pagenumbox}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Custom lines
+\newcommand{\customheadrule}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[primaryBlue, line width=1.2pt] 
+            ([yshift=-0.5cm, xshift=2cm]current page.north west) -- 
+            ([yshift=-0.5cm, xshift=-2cm]current page.north east);
+        \draw[lightBlue, line width=0.4pt] 
+            ([yshift=-0.6cm, xshift=2cm]current page.north west) -- 
+            ([yshift=-0.6cm, xshift=-2cm]current page.north east);
+    \end{tikzpicture}%
+}
+
+\newcommand{\customfootrule}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[lightBlue, line width=0.4pt] 
+            ([yshift=1.15cm, xshift=2cm]current page.south west) -- 
+            ([yshift=1.15cm, xshift=-2cm]current page.south east);
+        \draw[primaryBlue, line width=1.2pt] 
+            ([yshift=1.05cm, xshift=2cm]current page.south west) -- 
+            ([yshift=1.05cm, xshift=-2cm]current page.south east);
+    \end{tikzpicture}%
+}
+
+\fancyhead[C]{\customheadrule}
+\fancyfoot[C]{\customfootrule}
+
+% ============================================================
+% WATERMARK
+% ============================================================
+\newcommand{\watermark}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=0.06, scale=1.5] 
+            at (current page.center) {\includegraphics[height=8cm]{image/LOGO.jpg}};
+    \end{tikzpicture}%
+}
+\IfFileExists{image/LOGO.jpg}{\AddToShipoutPictureBG{\watermark}}{}
+
+% ============================================================
+% SECTION FORMATTING
+% ============================================================
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{primaryBlue}}
+    {\thesection}{1em}{}
+    [\color{primaryBlue}\titlerule]
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{secondaryBlue}}
+    {\thesubsection}{1em}{}
+
+% ============================================================
+% CUSTOM BOXES
+% ============================================================
+\newtcolorbox{partbox}[1]{
+    enhanced, colback=pastelBlue, colframe=primaryBlue,
+    coltitle=white, fonttitle=\bfseries\large, title=#1,
+    attach boxed title to top left={yshift=-3mm, xshift=5mm},
+    boxed title style={colback=primaryBlue, rounded corners, sharp corners=south},
+    rounded corners, arc=3mm, boxrule=1.5pt,
+    drop shadow={shadow xshift=2pt, shadow yshift=-2pt, opacity=0.3},
+    before skip=10pt, after skip=10pt
+}
+
+\newtcolorbox{topicbox}[1]{
+    enhanced, colback=white, colframe=secondaryBlue,
+    coltitle=white, fonttitle=\bfseries,
+    title={\begin{varwidth}{0.85\linewidth}\centering #1\end{varwidth}},
+    attach boxed title to top center={yshift=-2mm},
+    boxed title style={colback=secondaryBlue, rounded corners, left=6pt, right=6pt},
+    rounded corners, arc=2mm, boxrule=1pt,
+    before skip=8pt, after skip=8pt
+}
+
+% ============================================================
+% QUESTION ENVIRONMENTS
+% ============================================================
+\newcounter{questioncounter}
+\setcounter{questioncounter}{0}
+\newcounter{subquestioncounter}[questioncounter]
+
+% LABEL1: Trắc nghiệm 1 đáp án đúng
+\newenvironment{label1}[1][]{%
+    \refstepcounter{questioncounter}%
+    \par\vspace{10pt}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \thequestioncounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(Chọn 1 đáp án đúng)}}\\[3pt]
+    \noindent
+}{\par\vspace{8pt}}
+
+\newcommand{\choicesMedium}[4]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitem{A}{#1} & \choiceitem{B}{#2} \\[8pt]
+        \choiceitem{C}{#3} & \choiceitem{D}{#4}
+    \end{tabular}
+}
+\newcommand{\choicesTF}[2]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitem{A}{#1} & \choiceitem{B}{#2}
+    \end{tabular}
+}
+\newcommand{\choicesShort}[4]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.2\textwidth}@{\hspace{0.05\textwidth}}p{0.2\textwidth}@{\hspace{0.05\textwidth}}p{0.2\textwidth}@{\hspace{0.05\textwidth}}p{0.2\textwidth}@{\hspace{0.05\textwidth}}}
+        \choiceitem{A}{#1} & \choiceitem{B}{#2} &
+        \choiceitem{C}{#3} & \choiceitem{D}{#4}
+    \end{tabular}
+}
+\newcommand{\choicesLong}[4]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{1\textwidth}@{\hspace{0.05\textwidth}}}
+        \choiceitem{A}{#1} \\[8pt] \choiceitem{B}{#2} \\[8pt]
+        \choiceitem{C}{#3} \\[8pt] \choiceitem{D}{#4}
+    \end{tabular}
+}
+\newcommand{\choiceitem}[2]{%
+    \tikz[baseline=-0.5ex]{
+        \node[draw=primaryBlue, circle, minimum size=1.5em, inner sep=0pt, thick] {\textbf{#1}};
+    }~#2%
+}
+
+% LABEL2: Trắc nghiệm nhiều đáp án đúng
+\newenvironment{label2}[1][]{%
+    \refstepcounter{questioncounter}%
+    \par\vspace{10pt}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \thequestioncounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(Chọn nhiều đáp án đúng)}}\\[3pt]
+    \noindent
+}{\par\vspace{8pt}}
+
+\newcommand{\choiceitemBox}[2]{%
+    \tikz[baseline=-0.5ex]{
+        \node[draw=secondaryBlue, rectangle, minimum size=1.3em, inner sep=0pt, thick, rounded corners=1pt] {\textbf{#1}};
+    }~#2%
+}
+
+% 4 đáp án - 2 cột (Medium)
+\newcommand{\MultiMedium}[4]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4}
+    \end{tabular}
+}
+
+% 4 đáp án - 1 hàng (Short)
+\newcommand{\MultiShort}[4]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.2\textwidth}@{\hspace{0.05\textwidth}}p{0.2\textwidth}@{\hspace{0.05\textwidth}}p{0.2\textwidth}@{\hspace{0.05\textwidth}}p{0.2\textwidth}@{\hspace{0.05\textwidth}}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} &
+        \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4}
+    \end{tabular}
+}
+
+% 4 đáp án - 1 cột (Long)
+\newcommand{\MultiLong}[4]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{1\textwidth}@{\hspace{0.05\textwidth}}}
+        \choiceitemBox{A}{#1} \\[8pt] \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} \\[8pt] \choiceitemBox{D}{#4}
+    \end{tabular}
+}
+
+% ===== 5 ĐÁP ÁN (A-E) =====
+\newcommand{\MultiFiveMedium}[5]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4} \\[8pt]
+        \multicolumn{2}{@{}l}{\choiceitemBox{E}{#5}}
+    \end{tabular}
+}
+
+\newcommand{\MultiFiveLong}[5]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{1\textwidth}@{}}
+        \choiceitemBox{A}{#1} \\[8pt] \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} \\[8pt] \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5}
+    \end{tabular}
+}
+
+% ===== 6 ĐÁP ÁN (A-F) =====
+\newcommand{\MultiSixMedium}[6]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5} & \choiceitemBox{F}{#6}
+    \end{tabular}
+}
+
+\newcommand{\MultiSixShort}[6]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.14\textwidth}@{\hspace{0.03\textwidth}}p{0.14\textwidth}@{\hspace{0.03\textwidth}}p{0.14\textwidth}@{\hspace{0.03\textwidth}}p{0.14\textwidth}@{\hspace{0.03\textwidth}}p{0.14\textwidth}@{\hspace{0.03\textwidth}}p{0.14\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} & \choiceitemBox{C}{#3} &
+        \choiceitemBox{D}{#4} & \choiceitemBox{E}{#5} & \choiceitemBox{F}{#6}
+    \end{tabular}
+}
+
+\newcommand{\MultiSixLong}[6]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{1\textwidth}@{}}
+        \choiceitemBox{A}{#1} \\[8pt] \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} \\[8pt] \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5} \\[8pt] \choiceitemBox{F}{#6}
+    \end{tabular}
+}
+
+% ===== 7 ĐÁP ÁN (A-G) =====
+\newcommand{\MultiSevenMedium}[7]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5} & \choiceitemBox{F}{#6} \\[8pt]
+        \multicolumn{2}{@{}l}{\choiceitemBox{G}{#7}}
+    \end{tabular}
+}
+
+\newcommand{\MultiSevenLong}[7]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{1\textwidth}@{}}
+        \choiceitemBox{A}{#1} \\[8pt] \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} \\[8pt] \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5} \\[8pt] \choiceitemBox{F}{#6} \\[8pt]
+        \choiceitemBox{G}{#7}
+    \end{tabular}
+}
+
+% ===== 8 ĐÁP ÁN (A-H) =====
+\newcommand{\MultiEightMedium}[8]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.05\textwidth}}p{0.45\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5} & \choiceitemBox{F}{#6} \\[8pt]
+        \choiceitemBox{G}{#7} & \choiceitemBox{H}{#8}
+    \end{tabular}
+}
+
+\newcommand{\MultiEightShort}[8]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.1\textwidth}@{}}
+        \choiceitemBox{A}{#1} & \choiceitemBox{B}{#2} & \choiceitemBox{C}{#3} & \choiceitemBox{D}{#4} &
+        \choiceitemBox{E}{#5} & \choiceitemBox{F}{#6} & \choiceitemBox{G}{#7} & \choiceitemBox{H}{#8}
+    \end{tabular}
+}
+
+\newcommand{\MultiEightLong}[8]{%
+    \par\vspace{5pt}
+    \begin{tabular}{@{}p{1\textwidth}@{}}
+        \choiceitemBox{A}{#1} \\[8pt] \choiceitemBox{B}{#2} \\[8pt]
+        \choiceitemBox{C}{#3} \\[8pt] \choiceitemBox{D}{#4} \\[8pt]
+        \choiceitemBox{E}{#5} \\[8pt] \choiceitemBox{F}{#6} \\[8pt]
+        \choiceitemBox{G}{#7} \\[8pt] \choiceitemBox{H}{#8}
+    \end{tabular}
+}
+
+% LABEL3: Điền đáp án
+\newenvironment{label3}[1][]{%
+    \refstepcounter{questioncounter}%
+    \par\vspace{10pt}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \thequestioncounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(Điền đáp án)}}\\[3pt]
+    \noindent
+}{\par\vspace{8pt}}
+
+\newcommand{\answerbox}[1][3cm]{%
+    \par\vspace{8pt}
+    \noindent\textbf{Đáp án:}\hspace{0.5em}%
+    \raisebox{-0.3\height}{%
+        \tikz{
+            \draw[primaryBlue, thick, rounded corners=3pt] (0,0) rectangle (#1, 0.8cm);
+            \node[anchor=center, text=borderGray] at ({#1/2}, 0.4cm) {\small Điền đáp án...};
+        }%
+    }%
+}
+
+% LABEL4: Đúng/Sai
+\newenvironment{label4}[1][]{%
+    \refstepcounter{questioncounter}%
+    \par\vspace{10pt}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \thequestioncounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(Đúng/Sai)}}\\[3pt]
+    \noindent
+}{\par\vspace{8pt}}
+
+\newcommand{\truefalsehead}{%
+    \par\vspace{8pt}
+    \renewcommand{\arraystretch}{1.4}%
+    \begin{tabular}{|>{\raggedright\arraybackslash}m{0.7\textwidth}|>{\centering\arraybackslash}m{0.1\textwidth}|>{\centering\arraybackslash}m{0.1\textwidth}|}
+    \hline
+    \rowcolor{pastelBlue}
+    \textbf{Mệnh đề} & \textbf{Đúng} & \textbf{Sai} \\
+    \hline
+}
+
+\newcommand{\truefalseitem}[1]{%
+    \refstepcounter{subquestioncounter}%
+    (\alph{subquestioncounter}) #1 & 
+    \tikz[baseline=0.25ex]{\node[draw=primaryBlue, circle, minimum size=1.5em, inner sep=0pt, line width=1pt] {};} & 
+    \tikz[baseline=0.25ex]{\node[draw=primaryBlue, circle, minimum size=1.5em, inner sep=0pt, line width=1pt] {};} \\[6pt]
+    \hline
+}
+
+\newcommand{\truefalseend}{\end{tabular}\renewcommand{\arraystretch}{1}}
+
+% LABEL5: Kéo thả
+\newenvironment{label5}[1][]{%
+    \refstepcounter{questioncounter}%
+    \par\vspace{10pt}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \thequestioncounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(Kéo thả)}}\\[3pt]
+    \noindent
+}{\par\vspace{8pt}}
+
+\newcommand{\dragitems}[1]{%
+    \par\vspace{0pt}
+    \begin{tcolorbox}[enhanced, colback=pastelBlue, colframe=secondaryBlue,
+        rounded corners, arc=2mm, boxrule=1pt,
+        title={\color{textDark}\small\textbf{Đáp án kéo thả:}},
+        fonttitle=\small, coltitle=textDark,
+        attach boxed title to top left={yshift=-2mm, xshift=3mm},
+        boxed title style={colback=pastelBlue, boxrule=0pt}]
+    #1
+    \end{tcolorbox}
+}
+
+\newcommand{\dragitem}[1]{%
+    \tcbox[enhanced, colback=white, colframe=primaryBlue,
+        rounded corners, arc=2mm, boxrule=1pt,
+        left=5pt, right=5pt, top=2pt, bottom=2pt,
+        nobeforeafter, tcbox raise base,
+        drop shadow={shadow xshift=1pt, shadow yshift=-1pt, opacity=0.2}]{#1}~
+}
+
+\newcommand{\dropbox}[1][2cm]{%
+    \raisebox{-0.2\height}{%
+        \tikz{
+            \draw[borderGray, thick, dashed, rounded corners=3pt] (0,0) rectangle (#1, 0.6cm);
+            \fill[grayLight, rounded corners=2pt] (0.03,0.03) rectangle ({#1-0.03}, 0.57);
+        }%
+    }%
+}
+
+% LABEL6: Ghép nối
+\newenvironment{label6}[1][]{%
+    \refstepcounter{questioncounter}%
+    \par\vspace{10pt}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \thequestioncounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(Ghép nối)}}\\[3pt]
+    \noindent
+}{\par\vspace{8pt}}
+
+\newenvironment{matchingtable}{%
+    \par\vspace{8pt}
+    \begin{tabular}{|>{\raggedright\arraybackslash}m{0.4\textwidth}|>{\centering\arraybackslash}m{0.5\textwidth}|}
+    \hline
+    \rowcolor{pastelBlue}
+    \textbf{Thông tin} & \textbf{Ghép với đáp án} \\
+    \hline
+}{\end{tabular}}
+
+\newcommand{\matchrow}[2]{#1 & \dropbox[3cm] \\[8pt] \hline}
+
+\newcommand{\matchoptions}[1]{%
+    \par\vspace{5pt}
+    \begin{tcolorbox}[enhanced, colback=pastelBlue, colframe=secondaryBlue,
+        rounded corners, arc=2mm, boxrule=1pt,
+        title={\color{textDark}\small\textbf{Các đáp án:}},
+        fonttitle=\small, coltitle=textDark]
+    #1
+    \end{tcolorbox}
+}
+
+\newcommand{\matchitem}[1]{%
+    \tcbox[enhanced, colback=white, colframe=accentBlue,
+        rounded corners, arc=2mm, boxrule=1pt,
+        left=5pt, right=5pt, top=2pt, bottom=2pt,
+        nobeforeafter, tcbox raise base]{#1}~
+}
+
+% ============================================================
+% TITLE PAGE
+% ============================================================
+\newcommand{\examtitle}{%
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[pastelBlue] (current page.north west) rectangle (current page.south east);
+        \fill[primaryBlue] 
+            (current page.north west) -- (current page.north east) -- 
+            ([yshift=-4cm]current page.north east) 
+            to[out=180, in=0] ([yshift=-5cm]current page.north west) -- cycle;
+        \fill[secondaryBlue, opacity=0.5] 
+            ([yshift=3cm]current page.south west) -- ([yshift=3cm]current page.south east) -- 
+            (current page.south east) -- (current page.south west) -- cycle;
+        \fill[lightBlue, opacity=0.3] ([xshift=2cm, yshift=-3cm]current page.north west) circle (1.5cm);
+        \fill[lightBlue, opacity=0.2] ([xshift=-3cm, yshift=-6cm]current page.north east) circle (2cm);
+        \fill[secondaryBlue, opacity=0.2] ([xshift=4cm, yshift=5cm]current page.south west) circle (1.8cm);
+    \end{tikzpicture}
+
+    \begin{center}
+        \begin{tikzpicture}
+            \node[draw=white, line width=2pt, rounded corners=10pt, 
+                  minimum width=2cm, minimum height=2cm, 
+                  drop shadow] 
+                  {\includegraphics[height=1.8cm]{image/LOGO.jpg}};
+        \end{tikzpicture}
+        
+        \vspace{3cm}
+        
+        \begin{tikzpicture}
+            \node[fill=white, rounded corners=15pt, 
+                  inner sep=25pt, drop shadow={shadow xshift=3pt, shadow yshift=-3pt}] {
+                \begin{minipage}{0.8\textwidth}
+                    \centering
+                    {\color{primaryBlue}\fontsize{32}{36}\selectfont\textbf{ĐỀ THI THỬ}}
+                    \vspace{0.4cm}
+                    
+                    {\color{accentBlue}\fontsize{28}{34}\selectfont\textbf{ĐÁNH GIÁ TƯ DUY}}
+                    \vspace{0.3cm}
+                    
+                    {\color{secondaryBlue}\Large\textbf{(TSA - Thinking Skills Assessment)}}
+                    \vspace{0.4cm}
+                    
+                    {\color{primaryBlue}\fontsize{20}{24}\selectfont\textbf{TSA 2026 - ĐỀ SỐ 08}}
+                \end{minipage}
+            };
+        \end{tikzpicture}
+        
+        \vspace{2cm}
+        {\color{textDark}\Large\textbf{Số lượng câu hỏi: 100 câu~~|~~Thời gian làm bài: 150 phút}}
+        
+        \vspace{1cm}
+        \begin{tikzpicture}
+            \node[draw=primaryBlue, line width=1.5pt, rounded corners=10pt,
+                  minimum width=11cm, fill=white, inner sep=18pt] {
+                \begin{tabular}{r@{\hspace{8pt}}l}
+                    \textbf{Họ và tên thí sinh:} & \underline{\hspace{7cm}} \\[10pt]
+                    \textbf{Mã thi phần 1:} & \underline{\hspace{4cm}} \\[10pt]
+                    \textbf{Mã thi phần 2:} & \underline{\hspace{4cm}} \\[10pt]
+                    \textbf{Mã thi phần 3:} & \underline{\hspace{4cm}} \\[10pt]
+                    \textbf{Tổng điểm bài thi:} & \underline{\hspace{4cm}}
+                \end{tabular}
+            };
+        \end{tikzpicture}
+
+        \vspace{2cm}
+        \vfill
+        {\color{textDark}\textbf{Biên soạn: Nhóm giáo viên P20 STUDY}}
+    \end{center}
+    \newpage
+}
+
+% ============================================================
+% STRUCTURE BOX
+% ============================================================
+\newcommand{\examstructure}{%
+    \begin{tcolorbox}[enhanced, colback=pastelBlue, colframe=primaryBlue,
+        title={\textbf{CẤU TRÚC ĐỀ THI}}, coltitle=white, fonttitle=\large\bfseries,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={colback=primaryBlue, rounded corners},
+        rounded corners, arc=5mm, boxrule=2pt, drop shadow]
+    \begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \rowcolor{lightBlue}
+        \textbf{Phần} & \textbf{Nội dung} & \textbf{Số câu} & \textbf{Thời gian} \\
+        \hline
+        1 & Tư Duy Toán Học & 40 câu & 60 phút \\
+        \hline
+        2 & Tư Duy Đọc Hiểu (2 chủ đề) & 20 câu & 30 phút \\
+        \hline
+        3 & Tư Duy Khoa Học \& GQVĐ (8 chủ đề) & 40 câu & 60 phút \\
+        \hline
+        \rowcolor{pastelBlue}
+        \multicolumn{2}{|c|}{\textbf{Tổng cộng}} & \textbf{100 câu} & \textbf{150 phút} \\
+        \hline
+    \end{tabular}
+    \end{center}
+    
+    \vspace{10pt}
+    \textbf{Các loại câu hỏi:}
+    \begin{itemize}[leftmargin=*, itemsep=3pt]
+        \item \textcolor{primaryBlue}{\textbf{Loại 1:}} Trắc nghiệm 1 đáp án đúng (A, B, C, D)
+        \item \textcolor{secondaryBlue}{\textbf{Loại 2:}} Trắc nghiệm nhiều đáp án đúng
+        \item \textcolor{accentBlue}{\textbf{Loại 3:}} Điền đáp án
+        \item \textcolor{primaryBlue}{\textbf{Loại 4:}} Đúng/Sai
+        \item \textcolor{lightBlue}{\textbf{Loại 5:}} Kéo thả
+        \item \textcolor{accentBlue}{\textbf{Loại 6:}} Ghép nối
+    \end{itemize}
+    \end{tcolorbox}
+}
+
+% Part headers
+\newcommand{\partone}{%
+    \begin{partbox}{PHẦN 1: TƯ DUY TOÁN HỌC}
+    \textit{Phần này gồm 40 câu hỏi. Thí sinh hoàn thành trong thời gian 60 phút.}
+    \end{partbox}
+}
+
+\newcommand{\parttwo}{%
+    \begin{partbox}{PHẦN 2: TƯ DUY ĐỌC HIỂU}
+    \textit{Phần này gồm 2 chủ đề - 20 câu hỏi. Thí sinh hoàn thành trong thời gian 30 phút.}
+    \end{partbox}
+}
+
+\newcommand{\partthree}{%
+    \begin{partbox}{PHẦN 3: TƯ DUY KHOA HỌC \& GIẢI QUYẾT VẤN ĐỀ}
+    \textit{Phần này gồm 8 chủ đề - 40 câu hỏi liên quan tới kiến thức các môn Vật Lý - Hóa Học - Sinh Học. Thí sinh hoàn thành trong thời gian 60 phút.}
+    \end{partbox}
+}
+
+% Reading passage
+\newenvironment{readingpassage}[1][Đoạn văn]{%
+    \begin{tcolorbox}[enhanced, colback=grayLight, colframe=secondaryBlue,
+        coltitle=textDark, fonttitle=\bfseries, title={#1},
+        rounded corners, arc=3mm, boxrule=1pt,
+        left=15pt, right=15pt, top=10pt, bottom=10pt,
+        breakable, before skip=10pt, after skip=10pt, drop fuzzy shadow]
+    \setstretch{1.3}
+}{\end{tcolorbox}}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+
+% ============================================================
+% LESSON COMPONENTS (tài liệu học - Trực giác sóng)
+% ============================================================
+\newcommand{\tablecaption}[2]{%
+    \par\vspace{4pt}%
+    {\centering\textbf{\textit{Bảng #1:}}~\textit{#2}\par}%
+    \vspace{3pt}%
+}
+\newcommand{\lessontitle}[2]{%
+    \begin{tcolorbox}[enhanced, colback=pastelBlue, colframe=primaryBlue,
+        rounded corners, arc=4mm, boxrule=1.5pt, halign=center,
+        drop shadow={shadow xshift=2pt, shadow yshift=-2pt, opacity=0.3},
+        top=10pt, bottom=10pt, before skip=0pt, after skip=12pt]
+    {\color{primaryBlue}\fontsize{22}{26}\selectfont\textbf{#1}}\par\vspace{6pt}
+    {\color{accentBlue}\large\textbf{#2}}
+    \end{tcolorbox}
+}
+\newcommand{\lessonsection}[1]{%
+    \par\vspace{8pt}\Needspace{3cm}%
+    \noindent{\color{primaryBlue}\large\textbf{#1}}\par
+    \vspace{-2pt}{\color{lightBlue}\rule{\linewidth}{0.8pt}}\par\vspace{4pt}%
+}
+\newcommand{\pxtitle}[1]{%
+    \par\vspace{10pt}\Needspace{4cm}%
+    \begin{tcolorbox}[enhanced, colback=primaryBlue, colframe=primaryBlue, coltext=white,
+        rounded corners, arc=2mm, boxrule=0pt, left=8pt, right=8pt, top=4pt, bottom=4pt,
+        before skip=4pt, after skip=6pt]
+    \textbf{#1}
+    \end{tcolorbox}
+}
+\newtcolorbox{notebox}{enhanced, colback=pastelBlue, colframe=secondaryBlue,
+    rounded corners, arc=2mm, boxrule=0.8pt, leftrule=3pt, breakable,
+    before skip=6pt, after skip=6pt}
+\newtcolorbox{keybox}{enhanced, colback=white, colframe=primaryBlue,
+    rounded corners, arc=2mm, boxrule=1pt, breakable,
+    before skip=6pt, after skip=8pt}
+\newenvironment{reflexbox}{%
+    \begin{tcolorbox}[enhanced, colback=pastelBlue, colframe=secondaryBlue,
+        rounded corners, arc=2mm, boxrule=0.8pt, breakable,
+        left=4pt, right=6pt, top=4pt, bottom=4pt, before skip=6pt, after skip=6pt]
+    \begin{itemize}[leftmargin=1.6em, itemsep=3pt, topsep=0pt,
+        label={\color{primaryBlue}$\boldsymbol{\Rightarrow}$}]
+}{\end{itemize}\end{tcolorbox}}
+\newtcolorbox{trapbox}{enhanced, colback=orange!6, colframe=orange!75!black,
+    rounded corners, arc=2mm, boxrule=0.8pt, leftrule=3pt, breakable,
+    title={\textbf{Bẫy}}, coltitle=white, colbacktitle=orange!75!black,
+    fonttitle=\small, attach boxed title to top left={xshift=4mm, yshift=-2mm},
+    boxed title style={rounded corners, boxrule=0pt},
+    top=6pt, before skip=10pt, after skip=6pt}
+\newcommand{\qhead}{\par\vspace{4pt}\Needspace{2.5cm}\noindent{\color{primaryBlue}\textbf{Câu hỏi:}}\par\vspace{2pt}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\emergencystretch=3em
+
+% ---- question format (master v9 style) ----
+\newcounter{qcounter}
+\newcommand{\question}[2][Trắc nghiệm]{%
+    \refstepcounter{qcounter}%
+    \par\vspace{10pt}\Needspace{5.5cm}%
+    \noindent\textcolor{primaryBlue}{\textbf{Câu \theqcounter.}}~%
+    \textcolor{secondaryBlue}{\small\textbf{[P20 STUDY]}}~%
+    \textcolor{gray}{\small\textit{(#1)}}\par\vspace{3pt}%
+    \noindent #2\par}
+\newcommand{\tfcircle}{\tikz[baseline=0.25ex]{\node[draw=primaryBlue, circle, minimum size=1.5em, inner sep=0pt, line width=1pt] {};}}
+\renewcommand{\truefalsehead}{%
+    \par\vspace{6pt}%
+    \setcounter{subquestioncounter}{0}%
+    \begingroup\setstretch{1.0}\renewcommand{\arraystretch}{1.4}\small
+    \begin{longtable}{|>{\raggedright\arraybackslash}m{0.72\textwidth}|>{\centering\arraybackslash}m{0.08\textwidth}|>{\centering\arraybackslash}m{0.08\textwidth}|}
+    \hline\rowcolor{pastelBlue}\textbf{Mệnh đề} & \textbf{Đúng} & \textbf{Sai} \\ \hline\endfirsthead
+    \hline\rowcolor{pastelBlue}\textbf{Mệnh đề} & \textbf{Đúng} & \textbf{Sai} \\ \hline\endhead}
+\renewcommand{\truefalseitem}[1]{\refstepcounter{subquestioncounter}(\alph{subquestioncounter}) #1 & \tfcircle & \tfcircle \\ \hline}
+\renewcommand{\truefalseend}{\end{longtable}\endgroup}
+\newcommand{\answerlines}[1]{\par\nobreak\noindent\rule{0pt}{#1\baselineskip}\par}
+\newcommand{\figcaption}[2]{\par\vspace{3pt}{\centering\textbf{\textit{Hình #1:}}~\textit{#2}\par}\vspace{6pt}}
+
+\begin{document}
+\raggedbottom
+\setstretch{1.15}
+\lessontitle{BUỔI 1: CÂN BẰNG ĐỘNG, Kc VÀ Q}{Bài tập phản xạ PX1 -- PX6}
+
+\input{Phan thi/buoi1}
+
+\end{document}
