@@ -87,6 +87,8 @@ class Doc:
             _, n, ten, nguon, _ = FIG[f]
             w, h = Image.open(os.path.join(ROOT, f)).size
             wcm = min(width, 6.5 * w / h) if h > w else width
+            if len(paths) == 1 and w > 2 * h:
+                wcm = 16.0
             p = cell.paragraphs[0]; p.alignment = C
             p.add_run().add_picture(os.path.join(ROOT, f), width=Cm(wcm))
             p = cell.add_paragraph(); p.alignment = C
@@ -130,8 +132,9 @@ def build(gv):
                 r.font.superscript = part.startswith('^')
         for v in px['vd']:
             D.para([('VD: ', 'b'), (v, '')])
-        if px.get('figs'):
-            D.figures(px['figs'])
+        figs = px.get('figs', [])
+        for row in (figs if figs and isinstance(figs[0], list) else [figs] if figs else []):
+            D.figures(row)
         for rf in px['reflex']:
             head, tail = rf.split('thì nghĩ ngay:', 1)
             D.para([('⇒ ', 'b blue'), (head + 'thì nghĩ ngay:', 'b'), (tail, '')], indent=0.4)

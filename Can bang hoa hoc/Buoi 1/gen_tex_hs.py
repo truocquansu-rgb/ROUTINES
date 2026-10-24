@@ -1,5 +1,6 @@
 # Sinh PDF LaTeX gửi HS Buổi 1 (bài giảng đầy đủ theo khung chuyên đề Sóng) từ buoi1_spec.py. Bản HS: không có đáp án.
 import os, re, shutil, subprocess, sys, zipfile
+from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -49,6 +50,9 @@ def table(rows, label, cap):
 
 def figures(paths, used):
     w = {1: 0.6, 2: 0.47, 3: 0.31}[len(paths)]
+    if len(paths) == 1:
+        iw, ih = Image.open(os.path.join(ROOT, paths[0])).size
+        w = 0.9 if iw > 2 * ih else w  # hình ngang (đồ thị hai khung) cần rộng mới đọc được
     L = [r'\Needspace{7cm}', r'\begin{center}']
     for k, f in enumerate(paths):
         shutil.copy(os.path.join(ROOT, f), os.path.join(BUILD, 'image')); used.add(os.path.basename(f))
@@ -88,8 +92,9 @@ def build():
             out.append(r'\[ K_c = \dfrac{%s}{%s} \]' % (num, den))
         for v in px['vd']:
             out.append(r'\textbf{VD:} %s' % tx(v) + '\n')
-        if px.get('figs'):
-            out.append(figures(px['figs'], used))
+        figs = px.get('figs', [])
+        for row in (figs if figs and isinstance(figs[0], list) else [figs] if figs else []):
+            out.append(figures(row, used))
         out.append(r'\begin{reflexbox}')
         for rf in px['reflex']:
             head, tail = rf.split('thì nghĩ ngay:', 1)

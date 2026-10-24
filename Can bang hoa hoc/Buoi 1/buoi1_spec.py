@@ -59,7 +59,6 @@ PX = [
             {'q': 'Trong bình thứ hai, tính số mol I₂ và HI tại thời điểm đo được 0,3 mol H₂. So sánh thành phần khí này với bình thứ nhất và rút ra nhận xét.',
              'n': 6,
              'ans': '0,3 mol I₂ và 2,4 mol HI, giống hệt bình thứ nhất. Cùng điều kiện, hệ đạt cùng một trạng thái cuối dù xuất phát từ phía chất đầu hay phía sản phẩm.',
-             'ans_fig': 'Buoi 1/image/do_thi_nong_do_hai_chieu.png',
              'exp': 'H₂ đã phản ứng 1,5 − 0,3 = 1,2 mol, nên I₂ cũng phản ứng 1,2 mol (còn 0,3 mol) và tạo ra 2 × 1,2 = 2,4 mol HI. Lượng 1,5 mol H₂ và 1,5 mol I₂ tương đương với 3,0 mol HI ban đầu, nên hai bình kết thúc ở cùng một trạng thái.'},
             {'q': 'Phản ứng đốt cháy CH₄ khác phản ứng trong hai bình trên ở điểm nào?',
              'n': 4,
@@ -73,7 +72,7 @@ PX = [
         'vd': ['Bể nước có vòi chảy vào và vòi chảy ra cùng lưu lượng: mực nước đứng yên nhưng nước trong bể liên tục được thay. Khác với bập bênh hai bạn ngồi cân nhau: mọi thứ đứng yên thật sự (cân bằng tĩnh).'],
         'reflex': ['Đọc đề thấy "số mol (nồng độ) không đổi theo thời gian" thì nghĩ ngay: hệ đã cân bằng, nhưng hai chiều vẫn đang chạy với tốc độ bằng nhau.', 'Đọc đề thấy "đánh dấu đồng vị", "thay bằng nguyên tử nặng" thì nghĩ ngay: đề đang kiểm tra cân bằng động; nguyên tử đánh dấu sẽ lan sang cả chất đầu lẫn sản phẩm.'],
         'trap': ['Nhầm "nồng độ không đổi" thành "phản ứng đã dừng".', 'Nhầm "cân bằng" thành "nồng độ chất đầu bằng nồng độ sản phẩm".'],
-        'figs': ['Buoi 1/image/hinh_1_1.png', 'Buoi 1/image/voi_nuoc_bap_benh.png'],
+        'figs': [['Buoi 1/image/hinh_1_1.png', 'Buoi 1/image/voi_nuoc_bap_benh.png'], ['Buoi 1/image/do_thi_nong_do_hai_chieu.png']],
         'passage': [
             'Cho 1,00 mol N₂ và 3,00 mol H₂ vào bình kín dung tích 1 L có xúc tác, giữ ở nhiệt độ không đổi. Số mol các chất được đo định kì và ghi trong Bảng 1.1.',
             {'cap': 'Số mol các chất trong bình theo thời gian.', 'label': '1.1',
