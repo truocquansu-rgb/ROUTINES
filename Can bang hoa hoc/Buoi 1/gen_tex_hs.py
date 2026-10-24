@@ -115,7 +115,6 @@ def build():
         for i, q in enumerate(px['questions'], 1):
             out.append(r'\item \textbf{(%d)} %s' % (i, tx(fig_ref(q['q']))))
         out.append(r'\end{enumerate}')
-    out.append(r'\vfill\hfill \textit{(Nguồn: Nguyễn Nghĩa Đô biên soạn)}')
     open(os.path.join(BUILD, 'Phan thi', 'buoi1.tex'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 
     m = open(TEMPLATE, encoding='utf-8').read()
