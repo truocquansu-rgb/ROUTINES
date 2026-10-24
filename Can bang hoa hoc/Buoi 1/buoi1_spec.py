@@ -3,17 +3,41 @@
 # Bảng: {'cap': ..., 'label': 'N.N', 'rows': [[header...], [...], ...]}
 
 TITLE = 'CHUYÊN ĐỀ CÂN BẰNG HÓA HỌC'
-LESSON = 'Buổi 1. Cân bằng động, hằng số cân bằng Kc và tỉ số Q'
+LESSON = 'BUỔI 1: CÂN BẰNG ĐỘNG, Kc VÀ Q (PX1–PX6)'
+HEAD = 'CÂN BẰNG HÓA HỌC'
+
+KHOI_DONG = {
+    'cap': 'Một số cân bằng hóa học quanh ta.', 'label': '1.0',
+    'rows': [['Em gặp nó khi…', 'Cân bằng', 'Hai chiều thể hiện ở đâu'],
+             ['Vào hang động thấy thạch nhũ, măng đá', 'CaCO₃ + CO₂ + H₂O ⇌ Ca(HCO₃)₂', 'Chiều thuận khoét đá vôi thành hang; chiều nghịch đắp thạch nhũ'],
+             ['Mở chai nước ngọt có ga', 'CO₂(g) ⇌ CO₂(aq)', 'Đóng nắp: CO₂ tan vào nước; mở nắp: CO₂ thoát ra sủi bọt'],
+             ['Hít thở', 'Hb + O₂ ⇌ HbO₂', 'Ở phổi hemoglobin nhận O₂; ở mô hemoglobin nhả O₂'],
+             ['Nung đá vôi lấy vôi sống', 'CaCO₃(s) ⇌ CaO(s) + CO₂(g)', 'Lò có quạt hút: phân hủy gần hết; bình kín: dừng ở một lượng CO₂'],
+             ['Ngâm ống khí NO₂ vào nước nóng, nước đá', '2NO₂(g) ⇌ N₂O₄(g)', 'Nóng: nâu đỏ đậm lên; lạnh: nhạt gần như không màu'],
+             ['Ngửi mùi thơm của ester trong bánh kẹo', 'CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O', 'Ester tạo ra luôn còn lẫn acid và alcohol chưa phản ứng']]}
+
+INTRO = [
+    ('', 'Cân bằng hóa học không chỉ nằm trong ống nghiệm. Hang động, chai nước ngọt, hơi thở, lò nung vôi đều là những hệ mà hai chiều phản ứng cùng chạy, và hệ dừng lại ở một tỉ lệ xác định giữa các chất. Học được quy luật của tỉ lệ đó thì gặp hệ nào em cũng đoán được nó sẽ đi về đâu.'),
+    ('Bản chất của cân bằng hóa học:', ' Cân bằng là trạng thái mà phản ứng thuận và phản ứng nghịch chạy với tốc độ bằng nhau, nên lượng mỗi chất không đổi dù phản ứng vẫn đang xảy ra. Ở mỗi nhiệt độ, tỉ lệ nồng độ lúc cân bằng bằng đúng một con số là hằng số cân bằng Kc. Khi đọc bất kỳ bài nào về cân bằng, hãy luôn hỏi: hai chiều phản ứng là gì, hệ đang ở đâu so với cân bằng, và điều gì có thể làm đích đến thay đổi?'),
+]
+
+TSA = {
+    'title': '2. Khi đi thi TSA, người ta yêu cầu các em cái gì?',
+    'text': ['Đề không hỏi các em định nghĩa hằng số cân bằng là gì. Đề đưa một hệ hoàn toàn mới: lò nung vôi, nhà máy hóa chất, máu trong cơ thể, nước trong hang động. Mọi số liệu cần thiết đề đều cho. Thứ đề không cho là trực giác: đọc xong vài dòng, các em phải hình dung được hệ đang chạy theo chiều nào và sẽ dừng lại ở đâu.',
+             'Trực giác đó rút ra từ lý thuyết, nhưng gói lại thành phản xạ. Buổi 1 có 6 phản xạ, chia theo ba câu hỏi:'],
+    'groups': ['A. Phản ứng có chạy hết không? PX1, PX2.', 'B. Hệ dừng lại ở đâu (hằng số cân bằng Kc)? PX3, PX4, PX5.', 'C. Lúc này hệ sẽ chạy chiều nào (tỉ số Q)? PX6.'],
+    'after': 'Buổi sau học tiếp PX7–PX11: các tác động làm lệch Q và làm dời Kc (nguyên lí Le Chatelier). Cuối chuyên đề sẽ gặp những chỗ mà nguyên lí Le Chatelier "đoán sai".'}
+PX_HEAD = '3. Sáu phản xạ'
+
 
 PX = [
     {
-        'title': 'PX1. Phản ứng chạy hai chiều: vì sao chất đầu không bao giờ hết',
-        'teach': [
-            'Phản ứng một chiều: sản phẩm không phản ứng ngược lại thành chất đầu (đốt CH₄).',
-            'Phản ứng thuận nghịch: trong cùng điều kiện, chiều thuận và chiều nghịch xảy ra đồng thời, ký hiệu ⇌.',
-            'Hệ quả: phản ứng thuận nghịch không bao giờ xảy ra hoàn toàn, luôn còn lại cả chất đầu lẫn sản phẩm.',
-        ],
-        'figs': ['Buoi 1/image/hang_dong_phong_nha.png', 'Buoi 1/image/thach_nhu.png', 'Buoi 1/image/do_thi_nong_do_hai_chieu.png'],
+        'title': 'PX1. Phản ứng hai chiều không bao giờ hết chất đầu',
+        'theory': 'Phản ứng một chiều: sản phẩm không phản ứng ngược lại thành chất đầu, nên chất đầu có thể hết (đốt CH₄). Phản ứng thuận nghịch: trong cùng điều kiện, chiều thuận và chiều nghịch xảy ra đồng thời, viết bằng hai nửa mũi tên ngược chiều ⇌. Vì sản phẩm vừa tạo ra lại liên tục quay về chất đầu, phản ứng thuận nghịch không bao giờ xảy ra hoàn toàn.',
+        'vd': ['Hang động đá vôi: nước mưa có hòa tan CO₂ thấm qua đá vôi, khoét đá thành hang (chiều thuận tạo Ca(HCO₃)₂). Khi giọt nước nhỏ xuống trần hang, CO₂ thoát ra, Ca(HCO₃)₂ phân hủy trở lại thành CaCO₃ và đắp dần thành thạch nhũ, măng đá (chiều nghịch).'],
+        'reflex': ['Đọc đề thấy "⇌", "không hoàn toàn", "dù kéo dài thời gian", "hiệu suất chỉ đạt" thì nghĩ ngay: phản ứng thuận nghịch, lúc cuối luôn còn cả chất đầu lẫn sản phẩm.', 'Đọc đề thấy cùng một hệ xuất phát từ hai phía (chỉ có chất đầu, hoặc chỉ có sản phẩm) thì nghĩ ngay: cùng điều kiện thì hai bình về cùng một trạng thái cuối.'],
+        'trap': ['Tưởng chờ đủ lâu thì phản ứng thuận nghịch sẽ dùng hết chất đầu.', 'Tưởng hiệu suất thấp là do phản ứng chưa kịp xảy ra; thực ra hệ có thể đã cân bằng từ lâu.'],
+        'figs': ['Buoi 1/image/hang_dong_phong_nha.png', 'Buoi 1/image/thach_nhu.png'],
         'passage': [
             'Cho 3,0 mol khí HI vào một bình kín dung tích 10 L, giữ ở 445 °C. Sau 1 giờ, 1 ngày rồi 1 tuần, kết quả phân tích khí trong bình luôn giống nhau: 2,4 mol HI; 0,3 mol H₂ và 0,3 mol I₂.',
             'Ở một bình kín khác cùng dung tích và cùng nhiệt độ, người ta cho 1,5 mol H₂ và 1,5 mol I₂, không có HI. Sau một thời gian, trong bình đo được 0,3 mol H₂.',
@@ -31,10 +55,11 @@ PX = [
             {'q': 'Vì sao chờ đến 1 tuần mà HI vẫn không phân hủy hết?',
              'n': 4,
              'ans': 'Vì H₂ và I₂ sinh ra liên tục kết hợp lại thành HI, nên lượng HI mất đi luôn được bù lại một phần.',
-             'exp': 'Thời gian chờ không giải quyết được vấn đề, vì chiều nghịch không bao giờ tắt. Kết quả đo giống nhau sau 1 giờ, 1 ngày và 1 tuần cho thấy hệ đã đạt trạng thái mà lượng các chất không còn đổi.'},
+             'exp': 'Chờ lâu hơn cũng vậy, vì chiều nghịch không bao giờ tắt. Kết quả đo giống nhau sau 1 giờ, 1 ngày và 1 tuần: hệ đã ở trạng thái cân bằng, lượng các chất không còn đổi.'},
             {'q': 'Trong bình thứ hai, tính số mol I₂ và HI tại thời điểm đo được 0,3 mol H₂. So sánh thành phần khí này với bình thứ nhất và rút ra nhận xét.',
              'n': 6,
              'ans': '0,3 mol I₂ và 2,4 mol HI, giống hệt bình thứ nhất. Cùng điều kiện, hệ đạt cùng một trạng thái cuối dù xuất phát từ phía chất đầu hay phía sản phẩm.',
+             'ans_fig': 'Buoi 1/image/do_thi_nong_do_hai_chieu.png',
              'exp': 'H₂ đã phản ứng 1,5 − 0,3 = 1,2 mol, nên I₂ cũng phản ứng 1,2 mol (còn 0,3 mol) và tạo ra 2 × 1,2 = 2,4 mol HI. Lượng 1,5 mol H₂ và 1,5 mol I₂ tương đương với 3,0 mol HI ban đầu, nên hai bình kết thúc ở cùng một trạng thái.'},
             {'q': 'Phản ứng đốt cháy CH₄ khác phản ứng trong hai bình trên ở điểm nào?',
              'n': 4,
@@ -43,12 +68,11 @@ PX = [
         ],
     },
     {
-        'title': 'PX2. Lượng chất đứng yên nhưng phản ứng vẫn chạy (cân bằng động)',
-        'teach': [
-            'Lúc đầu v(thuận) lớn, v(nghịch) bằng 0. Theo thời gian, chất đầu giảm nên v(thuận) giảm; sản phẩm tăng nên v(nghịch) tăng.',
-            'Khi v(thuận) = v(nghịch), lượng mỗi chất không còn đổi: hệ đạt trạng thái cân bằng.',
-            'Cân bằng là cân bằng động: hai chiều vẫn chạy, chỉ là chạy với tốc độ bằng nhau.',
-        ],
+        'title': 'PX2. Lượng chất đứng yên, phản ứng vẫn chạy',
+        'theory': 'Lúc đầu chỉ có chất đầu nên v(thuận) lớn, v(nghịch) bằng 0. Theo thời gian chất đầu giảm nên v(thuận) giảm, sản phẩm tăng nên v(nghịch) tăng. Khi v(thuận) = v(nghịch), lượng mỗi chất không còn đổi: hệ đạt trạng thái cân bằng. Cân bằng hóa học là cân bằng động: hai chiều vẫn chạy, chỉ là chạy với tốc độ bằng nhau.',
+        'vd': ['Bể nước có vòi chảy vào và vòi chảy ra cùng lưu lượng: mực nước đứng yên nhưng nước trong bể liên tục được thay. Khác với bập bênh hai bạn ngồi cân nhau: mọi thứ đứng yên thật sự (cân bằng tĩnh).'],
+        'reflex': ['Đọc đề thấy "số mol (nồng độ) không đổi theo thời gian" thì nghĩ ngay: hệ đã cân bằng, nhưng hai chiều vẫn đang chạy với tốc độ bằng nhau.', 'Đọc đề thấy "đánh dấu đồng vị", "thay bằng nguyên tử nặng" thì nghĩ ngay: đề đang kiểm tra cân bằng động; nguyên tử đánh dấu sẽ lan sang cả chất đầu lẫn sản phẩm.'],
+        'trap': ['Nhầm "nồng độ không đổi" thành "phản ứng đã dừng".', 'Nhầm "cân bằng" thành "nồng độ chất đầu bằng nồng độ sản phẩm".'],
         'figs': ['Buoi 1/image/hinh_1_1.png', 'Buoi 1/image/voi_nuoc_bap_benh.png'],
         'passage': [
             'Cho 1,00 mol N₂ và 3,00 mol H₂ vào bình kín dung tích 1 L có xúc tác, giữ ở nhiệt độ không đổi. Số mol các chất được đo định kì và ghi trong Bảng 1.1.',
@@ -71,7 +95,7 @@ PX = [
             {'q': 'Bạn A cho rằng: "Từ phút 40, phản ứng đã dừng vì số mol không đổi". Thí nghiệm thay H₂ bằng D₂ ủng hộ hay bác bỏ ý kiến này? Giải thích.',
              'n': 6,
              'ans': 'Bác bỏ. Nguyên tử D đi được vào phân tử ammonia và H từ ammonia đi ra thành HD, chứng tỏ NH₃ vẫn liên tục bị phân hủy và được tạo lại.',
-             'exp': 'Nếu phản ứng đã dừng, D₂ chỉ nằm yên ở dạng D₂, không thể có NH₂D hay ND₃. Lượng tổng mỗi chất không đổi vì chiều thuận tạo ra bao nhiêu ammonia thì chiều nghịch phân hủy bấy nhiêu. Đây là bằng chứng cân bằng là cân bằng động.'},
+             'exp': 'Nếu phản ứng đã dừng, D₂ chỉ nằm yên ở dạng D₂, không thể có NH₂D hay ND₃. Lượng tổng mỗi chất không đổi vì chiều thuận tạo ra bao nhiêu ammonia thì chiều nghịch phân hủy bấy nhiêu. Thí nghiệm D₂ chứng minh cân bằng là cân bằng động.'},
             {'q': 'Mô tả dạng đồ thị v(thuận) và v(nghịch) theo thời gian từ phút 0 đến phút 50.',
              'n': 6,
              'ans': 'v(thuận) bắt đầu cao rồi giảm dần; v(nghịch) bắt đầu từ 0 rồi tăng dần; hai đường gặp nhau ở khoảng phút 40 và từ đó chạy song song trùng nhau, khác 0.',
@@ -79,16 +103,16 @@ PX = [
             {'q': 'Tại phút thứ 50, v(thuận) và v(nghịch) có bằng 0 không? So sánh hai tốc độ này.',
              'n': 4,
              'ans': 'Không bằng 0. Hai tốc độ bằng nhau.',
-             'exp': 'Cân bằng là v(thuận) = v(nghịch) ≠ 0. Đây là lỗi hay gặp: nhầm "nồng độ không đổi" thành "không còn phản ứng".'},
+             'exp': 'Cân bằng là v(thuận) = v(nghịch) ≠ 0. Lỗi hay gặp là nhầm "nồng độ không đổi" thành "không còn phản ứng".'},
         ],
     },
     {
-        'title': 'PX3. Viết Kc: chất nào vào, chất nào bỏ ra',
-        'teach': [
-            'Với aA + bB ⇌ cC + dD: Kc = [C]^c[D]^d / ([A]^a[B]^b), dùng nồng độ mol/L lúc cân bằng.',
-            'Sản phẩm ở tử, chất đầu ở mẫu, hệ số tỉ lượng thành số mũ.',
-            'Chất rắn không có mặt trong Kc. Kc chỉ phụ thuộc nhiệt độ và bản chất phản ứng.',
-        ],
+        'title': 'PX3. Chất vào/ra trong Kc',
+        'formula': ('[C]^c[D]^d', '[A]^a[B]^b'),
+        'theory': 'Với phản ứng aA + bB ⇌ cC + dD, hằng số cân bằng Kc tính theo công thức dưới đây, dùng nồng độ mol/L lúc cân bằng: sản phẩm ở tử, chất đầu ở mẫu, hệ số tỉ lượng thành số mũ. Chất rắn không có mặt trong Kc. Kc chỉ phụ thuộc nhiệt độ và bản chất phản ứng.',
+        'vd': ['Lò nung vôi: CaCO₃(s) ⇌ CaO(s) + CO₂(g) có Kc = [CO₂]. Bỏ thêm bao nhiêu đá vôi vào bình kín thì nồng độ CO₂ lúc cân bằng vẫn như cũ, vì "độ đặc" của một cục đá vôi không đổi dù cục to hay nhỏ.'],
+        'reflex': ['Đọc đề thấy phương trình có chất ghi (s) thì nghĩ ngay: bỏ chất đó khỏi Kc; lượng chất rắn (miễn là còn) không ảnh hưởng đến cân bằng.', 'Đọc đề thấy phương trình bị viết ngược chiều thì nghĩ ngay: Kc mới là nghịch đảo của Kc cũ.'],
+        'trap': ['Đưa chất rắn vào biểu thức Kc.', 'Quên số mũ, hoặc nêu giá trị Kc mà không kèm phương trình cụ thể.'],
         'passage': [
             'Cho bốn phản ứng thuận nghịch:',
             '(a) 2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
@@ -96,7 +120,7 @@ PX = [
             '(c) C(s) + H₂O(g) ⇌ CO(g) + H₂(g)',
             '(d) Fe₃O₄(s) + 4H₂(g) ⇌ 3Fe(s) + 4H₂O(g)',
             'Ở 800 °C, phản ứng (b) có Kc ≈ 0,0025. Một chất rắn nguyên chất có khối lượng riêng xác định, nên số mol chất trong mỗi lít chất rắn là một hằng số, không phụ thuộc ta có nhiều hay ít chất rắn đó.',
-            'Trong công nghiệp, vôi sống được sản xuất trong lò nung vôi (Hình 6). Đá vôi đổ vào từ đỉnh lò, được nung nóng ở khoảng 900 °C đến 1000 °C; khí thải chứa CO₂ được quạt hút ra ngoài liên tục, vôi sống lấy ra ở đáy lò.',
+            'Trong công nghiệp, vôi sống được sản xuất trong lò nung vôi (Hình {H:Buoi 1/image/lo_nung_voi.png}). Đá vôi đổ vào từ đỉnh lò, được nung nóng ở khoảng 900 °C đến 1000 °C; khí thải chứa CO₂ được quạt hút ra ngoài liên tục, vôi sống lấy ra ở đáy lò.',
             {'fig': 'Buoi 1/image/lo_nung_voi.png'},
         ],
         'questions': [
@@ -112,10 +136,10 @@ PX = [
              'n': 6,
              'ans': '0,025 mol CO₂. Lượng CaCO₃ gấp đôi thì số mol CO₂ vẫn là 0,025 mol.',
              'exp': 'Kc = [CO₂] = 0,0025 mol/L, nên n(CO₂) = 0,0025 × 10 = 0,025 mol. Nồng độ CO₂ lúc cân bằng chỉ do Kc quyết định, còn lượng chất rắn (miễn là còn dư) không có trong biểu thức nên không ảnh hưởng.'},
-            {'q': 'Trong lò nung vôi (Hình 6), CaCO₃ bị phân hủy gần hết thành vôi sống, còn trong bình kín ở ý (3) thì chỉ 0,025 mol CaCO₃ bị phân hủy. Dựa vào biểu thức Kc của phản ứng (b), giải thích vai trò của quạt hút.',
+            {'q': 'Trong lò nung vôi (Hình {H:Buoi 1/image/lo_nung_voi.png}), CaCO₃ bị phân hủy gần hết thành vôi sống, còn trong bình kín ở ý (3) thì chỉ 0,025 mol CaCO₃ bị phân hủy. Dựa vào biểu thức Kc của phản ứng (b), giải thích vai trò của quạt hút.',
              'n': 6,
              'ans': 'Quạt hút đưa CO₂ ra khỏi lò liên tục nên [CO₂] trong lò luôn nhỏ hơn Kc. Hệ không bao giờ đạt cân bằng, nên CaCO₃ tiếp tục phân hủy đến gần hết.',
-             'exp': 'Với phản ứng (b), Kc = [CO₂]: cân bằng chỉ đạt được khi nồng độ CO₂ bằng đúng Kc. Trong bình kín, CO₂ tích tụ đến giá trị này thì phản ứng thuận và nghịch cân bằng nhau. Trong lò, CO₂ bị rút đi trước khi kịp đạt Kc, nên chiều phân hủy CaCO₃ luôn chiếm ưu thế. Đây cũng là cách công nghiệp "kéo" một phản ứng thuận nghịch đi gần hết: liên tục lấy sản phẩm ra khỏi hệ.'},
+             'exp': 'Với phản ứng (b), Kc = [CO₂]: cân bằng chỉ đạt được khi nồng độ CO₂ bằng đúng Kc. Trong bình kín, CO₂ tích tụ đến giá trị này thì phản ứng thuận và nghịch cân bằng nhau. Trong lò, CO₂ bị rút đi trước khi kịp đạt Kc, nên chiều phân hủy CaCO₃ luôn chiếm ưu thế. Công nghiệp thường "kéo" phản ứng thuận nghịch đi gần hết theo cách này: liên tục lấy sản phẩm ra khỏi hệ.'},
             {'q': 'Ở một nhiệt độ, phản ứng (a) có Kc = K. Viết biểu thức Kc của phản ứng 2SO₃(g) ⇌ 2SO₂(g) + O₂(g) và tính giá trị theo K.',
              'n': 4,
              'ans': 'Kc = [SO₂]²[O₂]/[SO₃]² = 1/K.',
@@ -123,12 +147,11 @@ PX = [
         ],
     },
     {
-        'title': 'PX4. Tính Kc và nồng độ lúc cân bằng bằng bảng ICE',
-        'teach': [
-            'Bảng ICE gồm ba dòng: Ban đầu (Initial), Phản ứng (Change), Cân bằng (Equilibrium).',
-            'Dòng phản ứng luôn theo đúng tỉ lệ hệ số: chất đầu trừ, sản phẩm cộng.',
-            'Biết đủ nồng độ cân bằng thì tính Kc; biết Kc thì đặt ẩn x ở dòng phản ứng rồi giải phương trình.',
-        ],
+        'title': 'PX4. Tính Kc bằng bảng ICE',
+        'theory': 'Bảng ICE gồm ba dòng: Ban đầu (Initial), Phản ứng (Change), Cân bằng (Equilibrium). Dòng phản ứng luôn theo đúng tỉ lệ hệ số: chất đầu trừ, sản phẩm cộng. Biết đủ nồng độ lúc cân bằng thì tính được Kc; biết Kc thì đặt ẩn x ở dòng phản ứng rồi giải phương trình.',
+        'vd': ['Bảng ICE giống sổ thu chi: dòng đầu là số tiền có sẵn, dòng giữa là các khoản thu, chi (luôn theo đúng tỉ lệ đã thỏa thuận), dòng cuối là số tiền còn lại.'],
+        'reflex': ['Đọc đề cho lượng ban đầu và lượng một chất lúc cân bằng thì nghĩ ngay: lập ICE, suy ra các chất còn lại theo hệ số.', 'Đọc đề cho Kc và lượng ban đầu thì nghĩ ngay: đặt x ở dòng phản ứng, thay vào Kc, giải phương trình, chọn nghiệm làm mọi nồng độ đều dương.'],
+        'trap': ['Thay số mol vào Kc khi thể tích bình khác 1 L.', 'Tưởng tăng lượng chất ban đầu thì Kc tăng theo.', 'Tưởng Kc không đổi thì phần trăm chuyển hóa cũng không đổi.'],
         'passage': [
             'Ở nhiệt độ T, khí PCl₅ phân hủy theo phản ứng thuận nghịch: PCl₅(g) ⇌ PCl₃(g) + Cl₂(g).',
             'Thí nghiệm 1: cho 1,0 mol PCl₅ vào bình kín 2 L. Khi cân bằng, trong bình còn 0,5 mol PCl₅.',
@@ -151,16 +174,15 @@ PX = [
             {'q': 'Ở nhiệt độ T′, cho 1 mol CO và 1 mol H₂O vào bình kín 1 L. Tính phần trăm CO đã phản ứng khi cân bằng. Nếu thay bằng 1 mol CO và 3 mol H₂O thì phần trăm này bằng bao nhiêu (làm tròn đến hàng đơn vị)?',
              'n': 10,
              'ans': 'Khoảng 67% và khoảng 90%.',
-             'exp': 'Trường hợp 1: x²/(1 − x)² = 4, nên x/(1 − x) = 2, x = 2/3 ≈ 0,67 (67%). Trường hợp 2: x²/[(1 − x)(3 − x)] = 4, tức 3x² − 16x + 12 = 0, nghiệm phù hợp x ≈ 0,90 (90%). Đây là lí do trong công nghiệp người ta dùng hơi nước dư nhiều lần so với CO.'},
+             'exp': 'Trường hợp 1: x²/(1 − x)² = 4, nên x/(1 − x) = 2, x = 2/3 ≈ 0,67 (67%). Trường hợp 2: x²/[(1 − x)(3 − x)] = 4, tức 3x² − 16x + 12 = 0, nghiệm phù hợp x ≈ 0,90 (90%). Trong công nghiệp, hơi nước được lấy dư nhiều lần so với CO cũng vì lí do này.'},
         ],
     },
     {
-        'title': 'PX5. Kc lớn nói lên điều gì, và điều gì nó không nói được',
-        'teach': [
-            'Kc rất lớn: lúc cân bằng gần như chỉ còn sản phẩm, phản ứng gần như hoàn toàn theo chiều thuận.',
-            'Kc rất nhỏ: lúc cân bằng gần như chỉ có chất đầu, phản ứng thuận hầu như không xảy ra.',
-            'Kc cho biết đích đến, không cho biết đi nhanh hay chậm. Tốc độ là chuyện của động học.',
-        ],
+        'title': 'PX5. Kc cho biết đích đến, không cho biết tốc độ',
+        'theory': 'Kc rất lớn: lúc cân bằng gần như chỉ còn sản phẩm, phản ứng gần như hoàn toàn theo chiều thuận. Kc rất nhỏ: lúc cân bằng gần như chỉ có chất đầu, phản ứng thuận hầu như không xảy ra. Kc cho biết đích đến, không cho biết đi nhanh hay chậm; tốc độ là chuyện của động học.',
+        'vd': ['Kc giống địa chỉ ghi trên vé: biết chắc sẽ đến đâu, nhưng không biết đi bằng xe đạp hay máy bay. Hỗn hợp H₂ và O₂ có Kc khổng lồ nhưng để nhiều năm không tạo ra nước; chỉ một tia lửa là phát nổ.'],
+        'reflex': ['Đọc đề thấy Kc cực lớn hoặc cực nhỏ thì nghĩ ngay: phản ứng gần như hoàn toàn hoặc hầu như không xảy ra lúc cân bằng, nhưng chưa nói gì về tốc độ.', 'Đọc đề thấy các giá trị Kc ở những nhiệt độ khác nhau thì nghĩ ngay: Kc phụ thuộc nhiệt độ, chỉ dùng đúng ở nhiệt độ ghi kèm.'],
+        'trap': ['Tưởng Kc lớn thì phản ứng xảy ra nhanh.', 'Dùng giá trị Kc ở 25 °C cho một hệ ở nhiệt độ rất cao.'],
         'figs': ['Buoi 1/image/no_bong_H2.png', 'Buoi 1/image/bo_xuc_tac_o_to.png'],
         'passage': [
             {'cap': 'Hằng số cân bằng của một số phản ứng.', 'label': '1.2',
@@ -191,12 +213,11 @@ PX = [
         ],
     },
     {
-        'title': 'PX6. Q: "tỉ số lúc này" so với Kc cho biết phản ứng sẽ chạy chiều nào',
-        'teach': [
-            'Q dùng đúng công thức của Kc nhưng thay nồng độ ở thời điểm bất kỳ, kể cả khi chưa cân bằng.',
-            'Kc là giá trị riêng của Q khi hệ cân bằng. Q thay đổi theo thời gian, Kc cố định ở mỗi nhiệt độ.',
-            'Q < Kc: hệ chạy chiều thuận. Q > Kc: hệ chạy chiều nghịch. Q = Kc: hệ đang cân bằng. Phản ứng luôn chạy theo chiều đưa Q về Kc.',
-        ],
+        'title': 'PX6. So Q với Kc để biết chiều phản ứng',
+        'theory': 'Q dùng đúng công thức của Kc nhưng thay vào nồng độ ở thời điểm bất kỳ, kể cả khi chưa cân bằng. Kc là giá trị riêng của Q lúc hệ cân bằng. Q thay đổi theo thời gian, Kc cố định ở mỗi nhiệt độ. Q < Kc thì hệ chạy chiều thuận; Q > Kc thì hệ chạy chiều nghịch; Q = Kc thì hệ đang cân bằng.',
+        'vd': ['Q giống nhiệt độ phòng lúc này, Kc giống nhiệt độ cài trên điều hòa: máy luôn chạy theo hướng kéo nhiệt độ phòng về đúng mức đã cài, và dừng khi hai số bằng nhau.'],
+        'reflex': ['Đọc đề cho nồng độ tại một thời điểm và hỏi "phản ứng sẽ chạy chiều nào" thì nghĩ ngay: tính Q rồi so với Kc.', 'Đọc đề thấy bình chỉ có chất đầu hoặc chỉ có sản phẩm thì nghĩ ngay: Q = 0 thì chạy thuận, Q lớn vô cùng thì chạy nghịch, không cần tính.'],
+        'trap': ['Nhầm chiều so sánh: Q nhỏ hơn Kc là chạy thuận, không phải chạy nghịch.', 'Nhầm Q với Kc vì cùng công thức.'],
         'figs': ['Buoi 1/image/Q_va_K.png'],
         'passage': [
             'Ở 445 °C, phản ứng H₂(g) + I₂(g) ⇌ 2HI(g) có Kc = 64. Người ta chuẩn bị bốn bình kín, mỗi bình dung tích 1 L, cùng giữ ở 445 °C, với nồng độ các chất tại thời điểm bắt đầu quan sát như Bảng 1.3.',
@@ -227,7 +248,7 @@ PX = [
             {'q': 'Q và Kc được tính bằng cùng một công thức. Vậy hai đại lượng này khác nhau ở điểm nào?',
              'n': 6,
              'ans': 'Q tính ở thời điểm bất kỳ và thay đổi theo thời gian; Kc là giá trị của Q khi hệ cân bằng và không đổi ở một nhiệt độ. Theo thời gian Q luôn tiến về Kc.',
-             'exp': 'Trong bình Y, Q đi từ 16 tăng dần lên 64 rồi dừng ở đó; Kc thì luôn bằng 64. Đây là ý dùng làm câu tranh biện của buổi.'},
+             'exp': 'Trong bình Y, Q đi từ 16 tăng dần lên 64 rồi dừng ở đó; Kc thì luôn bằng 64. Ý này dùng làm câu tranh biện của buổi.'},
         ],
     },
 ]
