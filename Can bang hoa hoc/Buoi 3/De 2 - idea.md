@@ -42,7 +42,7 @@ Loại: B (quy trình công nghiệp kèm số liệu) · Tier: M3 (500–600 t�
 * Câu hỏi TSA gợi ý:
   * "Dựa vào Bảng 1, vì sao nhà máy không vận hành ở 350 °C dù phần trăm NH₃ lúc cân bằng cao hơn?" (Trade-off)
   * "Việc hóa lỏng và tách NH₃ ra khỏi khí tuần hoàn ảnh hưởng thế nào đến Q ở đầu vào tháp?" (Q < Kc, chuyển dịch theo chiều thuận)
-  * "Tính phần trăm tổng chuyển hóa khi tỉ lệ xả là 3%." (dùng công thức trong ngữ liệu; kết quả ≈ 86%, kiểm lại ở D4)
+  * "Tính phần trăm tổng chuyển hóa khi tỉ lệ xả là 3%." (dùng công thức trong ngữ liệu; kết quả ≈ 85%, đã tính: 0,15 / (1 − 0,85 × 0,97) = 0,855)
   * "Nếu ngừng xả khí trơ trong nhiều ngày, sản lượng NH₃ mỗi lượt thay đổi thế nào? Dựa vào Bảng 3."
   * "Một kỹ sư đề xuất nạp dư N₂ gấp đôi để tăng NH₃. Dùng Bảng 2 để phản biện."
 ```
