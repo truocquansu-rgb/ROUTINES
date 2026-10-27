@@ -6,5 +6,7 @@
 |---|---|
 | đúng như tưởng | giống suy đoán |
 | dịch thuận / dịch nghịch | chuyển dịch theo chiều thuận / chuyển dịch theo chiều nghịch |
-| (cân bằng) vẫn dịch, không dịch | vẫn dịch chuyển, không dịch chuyển |
+| "dịch" đứng một mình (vẫn dịch, không dịch, dịch về phía…) | ít nhất phải là "dịch chuyển" (vẫn dịch chuyển, không dịch chuyển, dịch chuyển về phía…) |
 | bị áp sai | bị áp dụng sai |
+
+Quy tắc chung: động từ "dịch" khi nói về cân bằng không bao giờ đứng một mình; tối thiểu "dịch chuyển", đủ nhất là "chuyển dịch theo chiều thuận/nghịch". Không áp cho "dung dịch".
