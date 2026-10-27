@@ -1,10 +1,85 @@
-# Handoff — Chuyên đề Cân bằng hóa học, Buổi 3
+# Handoff — Chuyên đề Cân bằng hóa học (3 buổi)
 
 Phiên tiếp theo bắt đầu từ đây. Đọc file này trước khi làm bất cứ gì.
 
 ---
 
-## Trạng thái hiện tại
+## Giáo án tổng thể — Chuyên đề Cân bằng hóa học (3 buổi)
+
+### Triết lý chuyên đề
+Chuyên đề TSA KH&GQVĐ về cân bằng hóa học, dạy cho học sinh chuẩn bị thi TSA (ĐHBK Hà Nội). Mỗi buổi gồm lý thuyết + phản xạ (PX) + passage + câu hỏi tự luyện. Đề kiểm tra dùng ngữ liệu thực tế (nhà máy, thí nghiệm, y học) kèm bảng số liệu, sơ đồ. Skill: `anthropic-skills:tsa-exam-creator`.
+
+### Cấu trúc 3 buổi
+
+```
+BUỔI 1 ✅ DONE — Cân bằng động, Kc và Q (PX1–PX6)
+BUỔI 2 ❌ CHƯA XÂY — Le Chatelier qua Q/Kc (PX7–PX11)
+  ↓ BTVN sau Buổi 2: Đề 1 (M3–4) + Đề 2 (M3) + Đề 3 (M3–4)
+BUỔI 3 — 30 phút đầu: Đề 4 (M2) + Đề 5 (M2), sau đó chữa cả 5 đề
+```
+
+### Buổi 1 — Cân bằng động, Kc và Q ✅ DONE
+
+**Thư mục:** `Can bang hoa hoc/Buoi 1/`
+**File chính:** `buoi1_spec.py` (spec Python chứa toàn bộ nội dung), `gen_docx.py` (xuất docx GV), `gen_tex_hs.py` (xuất PDF LaTeX HS)
+**Output đã có:** SOURCE docx, docx GV, PDF HS, zip Overleaf
+
+**Nội dung:** 6 phản xạ chia 3 nhóm:
+- **A. Phản ứng có chạy hết không?**
+  - PX1: Phản ứng hai chiều không bao giờ hết chất đầu (passage: HI ⇌ H₂+I₂ ở 445 °C)
+  - PX2: Lượng chất đứng yên, phản ứng vẫn chạy — cân bằng động (passage: N₂+3H₂ ⇌ 2NH₃, Bảng 1.1 số mol theo thời gian)
+- **B. Hệ dừng lại ở đâu? (Kc)**
+  - PX3: Hằng số cân bằng Kc — con số cho biết hệ "thích" chiều nào
+  - PX4: Kc chỉ phụ thuộc nhiệt độ
+  - PX5: Chất rắn và chất lỏng nguyên chất không xuất hiện trong biểu thức Kc
+- **C. Lúc này hệ chạy chiều nào? (Q)**
+  - PX6: So sánh Q với Kc để biết hệ chạy chiều nào
+
+**Mỗi PX gồm:** lý thuyết ngắn → ví dụ thực tế → phản xạ (quy tắc rút gọn khi đọc đề) → bẫy (lỗi hay gặp) → passage + câu hỏi tự luyện (có đáp án + giải thích).
+
+### Buổi 2 — Le Chatelier qua Q/Kc ❌ CHƯA XÂY
+
+**Thư mục:** `Can bang hoa hoc/Buoi 2/` — hiện chỉ có `image/` (4 ảnh: hinh_1_2.png → hinh_1_5.png)
+**Chưa có:** spec (tương tự `buoi1_spec.py`), docx, PDF, gen scripts
+
+**Nội dung dự kiến:** 5 phản xạ (PX7–PX11), dạy Le Chatelier KHÔNG qua "nguyên lí dịch chuyển" mà qua khung Q/Kc:
+- PX7–PX9: Các tác động làm lệch Q (thêm/bớt chất, nén/giãn, pha loãng) → Q ≠ Kc → hệ chạy chiều nào
+- PX10: Tác động dời Kc (thay đổi nhiệt độ) → cân bằng mới
+- PX11: Xúc tác — không đổi Kc, không đổi Q, chỉ đổi tốc độ
+
+**Không có đề kiểm tra trong buổi 2.** Bài tập nằm trong PX (tương tự Buổi 1).
+
+**Nhiệm vụ xây Buổi 2:**
+1. Viết spec `buoi2_spec.py` theo format `buoi1_spec.py` (PX7–PX11, mỗi PX có theory/vd/reflex/trap/passage/questions)
+2. Các passage cần bảng số liệu hoặc sơ đồ — dùng ảnh trong `Buoi 2/image/`
+3. Gen docx GV + PDF LaTeX HS (scripts tương tự Buổi 1)
+4. Lý thuyết bám khung Q/Kc: mọi tác động giải thích qua Q thay đổi so với Kc, KHÔNG dùng "hệ chống lại tác động" kiểu phát biểu cũ
+
+### BTVN sau Buổi 2 — 3 đề (M3–M4)
+
+Học sinh làm ở nhà, nộp trước Buổi 3:
+- **Đề 1** "Khi Le Chatelier đoán sai" (M3–4) — ✅ DONE, 6 câu, D5 đã xong
+- **Đề 2** "Nhà máy NH₃: mỗi lượt chỉ khoảng 15% vẫn có lãi" (M3) — 🔄 10 câu lọc D4, chờ chốt final list
+- **Đề 3** "Hemoglobin–CO–buồng oxy cao áp" (M3–4) — ❌ chưa bắt đầu
+
+### Buổi 3 — Kiểm tra + Chữa bài
+
+**30 phút đầu:** Làm tại lớp 2 đề ngắn (M2, ôn lại Buổi 1+2):
+- **Đề 4** "Từ hồ muối Ai Cập đến Kc" (M2) — ❌ có idea+prompt, chưa chạy Gemini
+- **Đề 5** "Nhật ký lò tổng hợp methanol" (M2) — ❌ có idea+prompt, chưa chạy Gemini
+
+**Phần còn lại:** Chữa cả 5 đề (Đề 1–3 BTVN + Đề 4–5 vừa làm).
+
+### Thứ tự ưu tiên công việc còn lại
+
+1. **Đề 2:** Người dùng chốt final list → D5 → docx
+2. **Đề 3:** Idea → ngữ liệu → prompt Gemini → D4 → D5 → docx
+3. **Đề 4 & 5:** Chạy Gemini (prompt đã có trong `De 4-5 - idea va prompt Gemini.md`) → D4 → D5 → docx
+4. **Buổi 2:** Viết spec PX7–PX11 → gen docx + PDF
+
+---
+
+## Trạng thái chi tiết từng đề
 
 ### Đề 1 — "Khi Le Chatelier đoán sai" ✅
 - Ngữ liệu: `De 1 - ngu lieu.md`
