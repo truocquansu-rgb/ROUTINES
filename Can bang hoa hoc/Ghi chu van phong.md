@@ -1,6 +1,6 @@
 # Ghi chú văn phong chuyên đề Cân bằng hóa học
 
-Áp dụng khi soạn bản cuối (docx HS, SOURCE, PDF, đề) ở bước D7, không sửa ngược vào idea/prompt.
+Áp dụng ở bước D5 (check toàn diện, giai đoạn 2 hình thức) cho mọi đề và bài giảng; không sửa ngược vào idea/prompt.
 
 | Không viết | Viết |
 |---|---|
