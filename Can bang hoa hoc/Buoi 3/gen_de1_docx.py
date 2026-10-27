@@ -1,4 +1,4 @@
-# Sinh docx GV Đề 1 (ngữ liệu + 9 câu + đáp án, giải thích ngay dưới từng câu), format A13/A14.
+# Sinh docx GV Đề 1 (ngữ liệu + 6 câu + đáp án, giải thích ngay dưới từng câu), format A13/A14.
 import os, re
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
@@ -15,6 +15,10 @@ SUP = dict(zip('⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺', '0123456789-+'))
 TOKEN = re.compile('([₀-₉]+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺]+)')
 
 TITLE = 'KHI LE CHATELIER "ĐOÁN SAI"'
+IMG = {
+    '1': os.path.join(HERE, 'image', 'de1_hinh2.png'),  # khí trơ A1/A2
+    '2': os.path.join(HERE, 'image', 'de1_hinh1.png'),  # FeSCN pha loãng
+}
 PASSAGE = [
     ('p', '[1] Nguyên lí Le Chatelier thường được học sinh nhớ dưới dạng hai câu ngắn: "tăng áp suất thì cân bằng dịch chuyển về phía ít phân tử khí" và "thêm chất nào thì hệ tiêu thụ bớt chất đó". Hai câu này chỉ là cách nói gọn của một quy tắc định lượng. Gọi Q là tỉ số tính bằng đúng công thức của Kc nhưng thay vào nồng độ ngay sau tác động. Nếu Q < Kc, cân bằng chuyển dịch theo chiều thuận; nếu Q > Kc, cân bằng chuyển dịch theo chiều nghịch; nếu Q = Kc, cân bằng không dịch chuyển. Kc chỉ thay đổi khi nhiệt độ thay đổi, và nồng độ chất rắn không có mặt trong biểu thức Kc.'),
     ('p', '[2] Tình huống A. Một hỗn hợp khí đang ở trạng thái cân bằng N₂O₄(g) ⇌ 2NO₂(g) ở nhiệt độ T, với Kc = [NO₂]²/[N₂O₄] = 0,036, [N₂O₄] = 0,100 M và [NO₂] = 0,060 M. Người ta thêm khí argon (Ar), một khí không phản ứng với N₂O₄ và NO₂, theo hai cách. Cách A1: hỗn hợp chứa trong bình cứng, thể tích không đổi; sau khi thêm Ar, áp suất tổng trong bình tăng. Cách A2: hỗn hợp chứa trong xi-lanh có pít-tông chuyển động tự do nên áp suất tổng giữ không đổi; lượng Ar thêm vào làm thể tích khí tăng gấp đôi.'),
@@ -169,7 +173,14 @@ def build():
             num, txt = b[1].split(' ', 1)
             w.para([(num + ' ', 'b'), (txt, '')])
         elif b[0] == 'fig':
-            w.para([('[Chèn Hình %s]' % b[1], 'i gray')], C)
+            img_path = IMG.get(b[1])
+            if img_path and os.path.isfile(img_path):
+                p = w.d.add_paragraph()
+                p.alignment = C
+                r = p.add_run()
+                r.add_picture(img_path, width=Cm(13))
+            else:
+                w.para([('[Chèn Hình %s]' % b[1], 'i gray')], C)
             w.para([('Hình %s' % b[1], 'b i'), (': ' + b[2], 'i')], C)
         else:
             w.para([('Bảng %s' % b[1], 'b i'), (': ' + b[2], 'i')], C)
