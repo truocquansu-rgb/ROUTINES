@@ -22,8 +22,8 @@ Loại: B (quy trình công nghiệp kèm số liệu) · Tier: M3 (500–600 t�
   6. Tổng thể: với 15% mỗi lượt và tuần hoàn, nếu xả 1% khí tuần hoàn thì khoảng 95% nguyên liệu được chuyển thành NH₃; xả 2% còn khoảng 90%; xả 5% còn khoảng 78% (công thức: tổng chuyển hóa = 0,15 / [1 − 0,85 × (1 − tỉ lệ xả)]).
   7. Tỉ lệ nạp N₂ : H₂: phần trăm NH₃ lúc cân bằng lớn nhất khi nạp đúng tỉ lệ 1 : 3; dư N₂ hay dư H₂ đều làm giảm (Bảng 2). Điều này trái với suy đoán "thêm chất đầu thì luôn được nhiều sản phẩm hơn".
 
-* Bảng dự kiến (mô phỏng):
-  - Bảng 1: % NH₃ lúc cân bằng theo nhiệt độ và áp suất (nạp 1 : 3), kèm tốc độ tương đối (mô phỏng, chọn để minh họa xu hướng):
+* Bảng dự kiến:
+  - Bảng 1: % NH₃ lúc cân bằng theo nhiệt độ và áp suất (nạp 1 : 3), kèm tốc độ tương đối:
     | Nhiệt độ | 100 bar | 200 bar | 300 bar | Tốc độ tương đối |
     | 350 °C | 35,7 | 47,5 | 54,2 | 1 |
     | 450 °C | 17,3 | 27,0 | 33,6 | 8 |
