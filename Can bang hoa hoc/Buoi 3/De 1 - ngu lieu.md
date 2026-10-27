@@ -1,14 +1,14 @@
-# Đề 1. Khi Le Chatelier "đoán sai": ngữ liệu bản sửa (sau D5 bản Gemini)
+# Đề 1. Khi Le Chatelier "đoán sai": ngữ liệu đã chốt (sửa từ output Gemini theo D5)
 
 **[1]** Nguyên lí Le Chatelier thường được học sinh nhớ dưới dạng hai câu ngắn: "tăng áp suất thì cân bằng dịch chuyển về phía ít phân tử khí" và "thêm chất nào thì hệ tiêu thụ bớt chất đó". Hai câu này chỉ là cách nói gọn của một quy tắc định lượng. Gọi Q là tỉ số tính bằng đúng công thức của Kc nhưng thay vào nồng độ ngay sau tác động. Nếu Q < Kc, cân bằng chuyển dịch theo chiều thuận; nếu Q > Kc, cân bằng chuyển dịch theo chiều nghịch; nếu Q = Kc, cân bằng không dịch chuyển. Kc chỉ thay đổi khi nhiệt độ thay đổi, và nồng độ chất rắn không có mặt trong biểu thức Kc.
 
 **[2]** Tình huống A. Một hỗn hợp khí đang ở trạng thái cân bằng N₂O₄(g) ⇌ 2NO₂(g) ở nhiệt độ T, với Kc = [NO₂]²/[N₂O₄] = 0,036, [N₂O₄] = 0,100 M và [NO₂] = 0,060 M. Người ta thêm khí argon (Ar), một khí không phản ứng với N₂O₄ và NO₂, theo hai cách. Cách A1: hỗn hợp chứa trong bình cứng, thể tích không đổi; sau khi thêm Ar, áp suất tổng trong bình tăng. Cách A2: hỗn hợp chứa trong xi-lanh có pít-tông chuyển động tự do nên áp suất tổng giữ không đổi; lượng Ar thêm vào làm thể tích khí tăng gấp đôi.
 
-[Hình 1: Thêm khí trơ vào bình cứng (trái) và vào xi-lanh có pít-tông tự do (phải).]
+*Hình 1: Thêm khí trơ Ar vào bình cứng (A1) và vào xi-lanh có pít-tông tự do (A2).*
 
 **[3]** Tình huống B. Một dung dịch chứa cân bằng Fe³⁺(aq) + SCN⁻(aq) ⇌ FeSCN²⁺(aq); màu đỏ máu của dung dịch do ion FeSCN²⁺ tạo ra. Ở 25 °C, Kc = [FeSCN²⁺]/([Fe³⁺][SCN⁻]) = 100. Ban đầu [Fe³⁺] = [SCN⁻] = 0,020 M và [FeSCN²⁺] = 0,040 M. Người ta thêm nước cất để thể tích dung dịch tăng gấp đôi, rồi dùng máy đo màu theo dõi nồng độ FeSCN²⁺ đến khi số đo ổn định.
 
-[Hình 2: Dung dịch FeSCN²⁺ trước và sau khi pha loãng gấp đôi.]
+*Hình 2: Dung dịch chứa FeSCN²⁺ trước và sau khi pha loãng gấp đôi.*
 
 **[4]** Tình huống C. Một bình kín ở 25 °C chứa dư NH₄HS rắn, có cân bằng NH₄HS(s) ⇌ NH₃(g) + H₂S(g) với Kc = [NH₃][H₂S] = 1,44·10⁻⁴; lúc cân bằng [NH₃] = [H₂S] = 0,012 M. Người ta cho thêm 10 g NH₄HS rắn vào bình, giữ nguyên nhiệt độ và thể tích.
 
@@ -34,6 +34,7 @@
 | Thêm Ar ở áp suất không đổi (A2) | Áp suất tổng không đổi nên cân bằng không dịch chuyển |
 | Pha loãng dung dịch (B) | Mọi nồng độ cùng giảm một nửa nên cân bằng không dịch chuyển |
 | Thêm NH₄HS rắn (C) | Thêm chất đầu nên cân bằng chuyển dịch theo chiều thuận |
+| Rút bớt NO₂ khỏi bình cứng ở tình huống A (trước khi thêm Ar) | Mất bớt sản phẩm nên cân bằng chuyển dịch theo chiều thuận để tạo lại NO₂ |
 
 **Nguồn: P20 STUDY sưu tầm và tổng hợp**
 
