@@ -12,7 +12,7 @@
 
 **[4]** Tình huống C. Một bình kín ở 25 °C chứa dư NH₄HS rắn, có cân bằng NH₄HS(s) ⇌ NH₃(g) + H₂S(g) với Kc = [NH₃][H₂S] = 1,44·10⁻⁴; lúc cân bằng [NH₃] = [H₂S] = 0,012 M. Người ta cho thêm 10 g NH₄HS rắn vào bình, giữ nguyên nhiệt độ và thể tích.
 
-**Bảng 1:** *Nồng độ (M) các chất ở ba thời điểm (số liệu mô phỏng).*
+**Bảng 1:** *Nồng độ (M) các chất ở ba thời điểm.*
 
 | Tình huống | Chất | Cân bằng ban đầu | Ngay sau tác động | Cân bằng mới |
 |---|---|---|---|---|

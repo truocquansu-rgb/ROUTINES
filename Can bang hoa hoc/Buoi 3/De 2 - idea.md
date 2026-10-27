@@ -4,7 +4,7 @@ Bài về nhà sau Buổi 2 · chữa ở Buổi 3 · M3 · Trạng thái: có i
 
 ## Idea (D2)
 
-Số liệu bảng là **mô phỏng khí lý tưởng**, tính bằng code từ một Kp neo ở 450 °C (Kp ≈ 6,1·10⁻⁵ bar⁻², ΔH = −91,8 kJ theo SGK, hỗn hợp N₂ : H₂ = 1 : 3), nên các bảng nhất quán với nhau. Giá trị thật của nhà máy (khí thực ở áp suất cao) lệch vài phần trăm, vì vậy ngữ liệu ghi rõ "số liệu mô phỏng".
+Số liệu bảng là **mô phỏng khí lý tưởng**, tính bằng code từ một Kp neo ở 450 °C (Kp ≈ 6,1·10⁻⁵ bar⁻², ΔH = −91,8 kJ theo SGK, hỗn hợp N₂ : H₂ = 1 : 3), nên các bảng nhất quán với nhau. Giá trị thật của nhà máy (khí thực ở áp suất cao) lệch vài phần trăm. Ngữ liệu không ghi chú "mô phỏng".
 
 ```
 2. Nhà máy NH₃: mỗi lượt chỉ khoảng 15% vẫn có lãi

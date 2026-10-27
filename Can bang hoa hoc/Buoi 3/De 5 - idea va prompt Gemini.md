@@ -22,7 +22,7 @@ Loại: A (bảng thao tác – kết quả) · Tier: M2
   5. Thay lớp xúc tác cũ bằng lớp xúc tác mới hoạt tính cao hơn, giữ thể tích và nhiệt độ.
 * Biến phụ thuộc: Q ngay sau thao tác, Kc sau thao tác, chiều phản ứng, lượng CH₃OH khi cân bằng mới, thời gian đạt cân bằng.
 * Biến kiểm soát: mỗi lần chỉ đổi một yếu tố; các thao tác không nối tiếp nhau.
-* Dữ liệu dự kiến: Bảng 1 nhật ký 5 thao tác (nồng độ ngay sau thao tác, nhiệt độ, Kc tại nhiệt độ đó). Bảng 2 Kc theo nhiệt độ: 250 °C – 0,50; 300 °C – 0,20 (số liệu mô phỏng).
+* Dữ liệu dự kiến: Bảng 1 nhật ký 5 thao tác (nồng độ ngay sau thao tác, nhiệt độ, Kc tại nhiệt độ đó). Bảng 2 Kc theo nhiệt độ: 250 °C – 0,50; 300 °C – 0,20.
 * Lỗi nhầm lẫn điển hình:
   L1. Tưởng thêm chất hoặc nén làm Kc thay đổi.
   L2. Tưởng nâng nhiệt độ thì phản ứng chạy chiều thuận (không xét dấu ΔH).
@@ -56,7 +56,7 @@ Loại: A (bảng thao tác – kết quả) · Tier: M2
   5. Thay lớp xúc tác cũ bằng lớp xúc tác mới hoạt tính cao hơn, giữ thể tích và nhiệt độ.
 * Biến phụ thuộc: Q ngay sau thao tác, Kc sau thao tác, chiều phản ứng, lượng CH₃OH khi cân bằng mới, thời gian đạt cân bằng.
 * Biến kiểm soát: mỗi lần chỉ đổi một yếu tố; các thao tác không nối tiếp nhau.
-* Dữ liệu dự kiến: Bảng 1 nhật ký 5 thao tác (nồng độ ngay sau thao tác, nhiệt độ, Kc tại nhiệt độ đó). Bảng 2 Kc theo nhiệt độ: 250 °C – 0,50; 300 °C – 0,20 (số liệu mô phỏng).
+* Dữ liệu dự kiến: Bảng 1 nhật ký 5 thao tác (nồng độ ngay sau thao tác, nhiệt độ, Kc tại nhiệt độ đó). Bảng 2 Kc theo nhiệt độ: 250 °C – 0,50; 300 °C – 0,20.
 * Lỗi nhầm lẫn điển hình:
   L1. Tưởng thêm chất hoặc nén làm Kc thay đổi.
   L2. Tưởng nâng nhiệt độ thì phản ứng chạy chiều thuận (không xét dấu ΔH).
@@ -70,7 +70,7 @@ Loại: A (bảng thao tác – kết quả) · Tier: M2
 
 NHIỆM VỤ 1: VIẾT NGỮ LIỆU
 - Độ dài 300–400 từ, chia đoạn [1], [2], [3]: giới thiệu methanol và phản ứng tổng hợp; giới thiệu Kc, Q và quy tắc so sánh Q với Kc (Q < Kc chạy thuận, Q > Kc chạy nghịch, Q = Kc cân bằng); mô tả trạng thái gốc và cách ghi nhật ký.
-- Bảng 1 "Nhật ký 5 thao tác": cột Thao tác | Nhiệt độ | [CO] ngay sau thao tác | [H₂] ngay sau thao tác | [CH₃OH] ngay sau thao tác. Bảng 2 "Kc theo nhiệt độ" (250 °C: 0,50; 300 °C: 0,20; ghi chú "số liệu mô phỏng"). Caption "Bảng N: ..." đặt TRÊN bảng.
+- Bảng 1 "Nhật ký 5 thao tác": cột Thao tác | Nhiệt độ | [CO] ngay sau thao tác | [H₂] ngay sau thao tác | [CH₃OH] ngay sau thao tác. Bảng 2 "Kc theo nhiệt độ" (250 °C: 0,50; 300 °C: 0,20). Caption "Bảng N: ..." đặt TRÊN bảng.
 - Chỉ ghi số liệu "ngay sau thao tác", KHÔNG ghi nồng độ ở cân bằng mới (để câu hỏi khai thác).
 - Dòng cuối ngữ liệu: "Nguồn: P20 STUDY sưu tầm và tổng hợp".
 - Không nhắc tới vòng tuần hoàn khí hay tách sản phẩm liên tục trong dây chuyền (đã dành cho đề khác).

@@ -10,3 +10,5 @@
 | bị áp sai | bị áp dụng sai |
 
 Quy tắc chung: động từ "dịch" khi nói về cân bằng không bao giờ đứng một mình; tối thiểu "dịch chuyển", đủ nhất là "chuyển dịch theo chiều thuận/nghịch". Không áp cho "dung dịch".
+
+Không bao giờ thêm ghi chú "(số liệu mô phỏng)", "số liệu mô phỏng" hay tương tự vào ngữ liệu, caption bảng, câu hỏi và prompt Gemini.

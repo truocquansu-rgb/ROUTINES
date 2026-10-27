@@ -22,7 +22,7 @@ PASSAGE = [
     ('p', '[3] Tình huống B. Một dung dịch chứa cân bằng Fe³⁺(aq) + SCN⁻(aq) ⇌ FeSCN²⁺(aq); màu đỏ máu của dung dịch do ion FeSCN²⁺ tạo ra. Ở 25 °C, Kc = [FeSCN²⁺]/([Fe³⁺][SCN⁻]) = 100. Ban đầu [Fe³⁺] = [SCN⁻] = 0,020 M và [FeSCN²⁺] = 0,040 M. Người ta thêm nước cất để thể tích dung dịch tăng gấp đôi, rồi dùng máy đo màu theo dõi nồng độ FeSCN²⁺ đến khi số đo ổn định.'),
     ('fig', '2', 'Dung dịch chứa FeSCN²⁺ trước và sau khi pha loãng gấp đôi.'),
     ('p', '[4] Tình huống C. Một bình kín ở 25 °C chứa dư NH₄HS rắn, có cân bằng NH₄HS(s) ⇌ NH₃(g) + H₂S(g) với Kc = [NH₃][H₂S] = 1,44·10⁻⁴; lúc cân bằng [NH₃] = [H₂S] = 0,012 M. Người ta cho thêm 10 g NH₄HS rắn vào bình, giữ nguyên nhiệt độ và thể tích.'),
-    ('tab', '1', 'Nồng độ (M) các chất ở ba thời điểm (số liệu mô phỏng).', [
+    ('tab', '1', 'Nồng độ (M) các chất ở ba thời điểm.', [
         ['Tình huống', 'Chất', 'Cân bằng ban đầu', 'Ngay sau tác động', 'Cân bằng mới'],
         ['A1', 'N₂O₄', '0,100', '0,100', ''], ['A1', 'NO₂', '0,060', '0,060', ''],
         ['A2', 'N₂O₄', '0,100', '0,050', '0,0449'], ['A2', 'NO₂', '0,060', '0,030', '0,0402'],
