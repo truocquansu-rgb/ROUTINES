@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Buổi 2 — Le Chatelier qua Q/Kc (PX7–PX11)
+Buổi 2 — Le Chatelier qua Q/Kc (PX7–PX10)
 Chuyên đề Cân bằng hóa học · TSA ĐHBK Hà Nội
 """
 
 TITLE = 'CHUYÊN ĐỀ CÂN BẰNG HÓA HỌC'
-LESSON = 'BUỔI 2: LE CHATELIER QUA Q/Kc (PX7–PX11)'
+LESSON = 'BUỔI 2: LE CHATELIER QUA Q/Kc (PX7–PX10)'
 HEAD = 'CÂN BẰNG HÓA HỌC'
 
 # ──────────────────────────────────────────────
@@ -15,117 +15,21 @@ INTRO = [
     'Buổi trước, ta đã biết cách đọc hai con số Q và Kc: '
     'Q < Kc thì hệ chạy thuận, Q > Kc thì hệ chạy nghịch, Q = Kc thì cân bằng. '
     'Câu hỏi tiếp theo là: khi ta tác động vào hệ đang cân bằng '
-    '(thêm chất, nén, thay đổi nhiệt độ), Q và Kc thay đổi thế nào, '
+    '(nén, thay đổi nhiệt độ, thêm xúc tác), Q và Kc thay đổi thế nào, '
     'và hệ đi về đâu?',
 
     'Buổi này chia ba nhóm tác động:\n'
-    '• Nhóm D (PX7–PX9): tác động làm lệch Q trong khi Kc đứng yên '
-    '(vì nhiệt độ không đổi).\n'
-    '• Nhóm E (PX10): tác động duy nhất dời được Kc — thay đổi nhiệt độ.\n'
-    '• Nhóm F (PX11): xúc tác — không đổi Q, không đổi Kc.',
+    '• Nhóm D (PX7–PX8): tác động làm lệch Q trong khi Kc đứng yên '
+    '(vì nhiệt độ không đổi) — nén/giãn thể tích và thêm khí trơ.\n'
+    '• Nhóm E (PX9): tác động duy nhất dời được Kc — thay đổi nhiệt độ.\n'
+    '• Nhóm F (PX10): xúc tác — không đổi Q, không đổi Kc.',
 ]
 
 # ──────────────────────────────────────────────
-# PX7 — Thêm/bớt chất → Q lệch Kc
+# PX7 — Nén/giãn thể tích (hệ khí) → Q lệch Kc
 # ──────────────────────────────────────────────
 PX7 = {
-    'title': 'PX7. Thêm/bớt chất — Q lệch Kc',
-
-    'theory': (
-        'Xét hệ đang cân bằng (Q = Kc). '
-        'Thêm chất đầu làm mẫu số của Q tăng → Q giảm → Q < Kc → hệ chạy thuận. '
-        'Thêm sản phẩm làm tử số tăng → Q tăng → Q > Kc → hệ chạy nghịch. '
-        'Bớt sản phẩm (lấy ra liên tục) → Q giảm → hệ chạy thuận.\n\n'
-        'Ngoại lệ quan trọng: chất RẮN nguyên chất không xuất hiện trong biểu thức Q, '
-        'nên thêm hay bớt chất rắn nguyên chất không làm Q thay đổi → '
-        'cân bằng KHÔNG chuyển dịch.'
-    ),
-
-    'vd': [
-        'Lò nung vôi: CaCO₃(s) ⇌ CaO(s) + CO₂(g). '
-        'Liên tục thổi CO₂ ra khỏi lò → Q giảm → chạy thuận → CaCO₃ phân hủy nhanh hơn.',
-        'Nhà máy NH₃ (Haber): NH₃ được ngưng tụ và tách ra liên tục → Q luôn < Kc '
-        'ở đầu vào tháp → chiều thuận luôn được ưu tiên.',
-    ],
-
-    'reflex': [
-        'Đọc đề thấy "liên tục lấy sản phẩm ra" → nghĩ ngay: Q giảm, chạy thuận.',
-        'Đọc đề thấy "thêm chất rắn nguyên chất" → nghĩ ngay: Q không đổi, không chuyển dịch.',
-    ],
-
-    'trap': [
-        'Tưởng thêm CaCO₃ rắn vào lò sẽ tạo thêm CO₂ '
-        '(thực ra Q không đổi vì chất rắn không có trong biểu thức Q).',
-        'Tưởng lấy sản phẩm ra là "giảm nồng độ" nên hệ chạy nghịch '
-        '(thực ra lấy sản phẩm ra → tử Q giảm → Q < Kc → chạy thuận).',
-    ],
-
-    'figs': [],
-
-    'passage': [
-        'Calcium carbonate (CaCO₃) phân hủy nhiệt theo phản ứng:',
-        'CaCO₃(s) ⇌ CaO(s) + CO₂(g)    Kc = [CO₂]',
-        'Trong lò nung vôi công nghiệp, CaCO₃ được nung ở khoảng 900 °C. '
-        'Khí CO₂ sinh ra được quạt hút ra ngoài liên tục. '
-        'Một nhóm nghiên cứu tiến hành ba thí nghiệm trong bình kín ở 900 °C '
-        '(Kc = 0,040 mol/L) để khảo sát ảnh hưởng của việc thêm/bớt chất:',
-        {'cap': 'Kết quả ba thí nghiệm với hệ CaCO₃/CaO/CO₂ ở 900 °C',
-         'label': '2.1',
-         'rows': [
-             ['Thí nghiệm', 'Tác động', '[CO₂] ban đầu (mol/L)', 'Q ban đầu', 'Dự đoán chiều'],
-             ['1', 'Thêm 50 g CaCO₃ rắn', '0,040', '0,040', '?'],
-             ['2', 'Bơm thêm CO₂ đến [CO₂] = 0,060', '0,060', '0,060', '?'],
-             ['3', 'Hút bớt CO₂ còn [CO₂] = 0,020', '0,020', '0,020', '?'],
-         ]},
-        'Lưu ý: CaCO₃ và CaO đều là chất rắn nguyên chất, '
-        'không xuất hiện trong biểu thức Kc.',
-    ],
-
-    'questions': [
-        {
-            'q': 'Ở thí nghiệm 1, khi thêm 50 g CaCO₃ rắn vào bình đang cân bằng, '
-                 'cân bằng chuyển dịch theo chiều nào? Giải thích bằng Q và Kc.',
-            'n': 4,
-            'ans': 'Không chuyển dịch.',
-            'exp': 'CaCO₃ là chất rắn nguyên chất, không có trong biểu thức Q = [CO₂]. '
-                   'Thêm CaCO₃ không làm Q thay đổi → Q vẫn = Kc = 0,040 → cân bằng giữ nguyên.',
-        },
-        {
-            'q': 'Ở thí nghiệm 2, bơm thêm CO₂ đến [CO₂] = 0,060 mol/L. '
-                 'Tính Q và cho biết hệ chạy theo chiều nào.',
-            'n': 4,
-            'ans': 'Q = 0,060 > Kc = 0,040 → chạy nghịch.',
-            'exp': 'Q = [CO₂] = 0,060 > 0,040 = Kc → hệ chuyển dịch theo chiều nghịch '
-                   '(CO₂ phản ứng với CaO tạo lại CaCO₃) cho đến khi [CO₂] giảm về 0,040.',
-        },
-        {
-            'q': 'Ở thí nghiệm 3, hút bớt CO₂ còn 0,020 mol/L. '
-                 'Tính Q và giải thích vì sao trong lò nung vôi công nghiệp, '
-                 'người ta liên tục hút CO₂ ra.',
-            'n': 5,
-            'ans': 'Q = 0,020 < Kc = 0,040 → chạy thuận.',
-            'exp': 'Q = [CO₂] = 0,020 < 0,040 = Kc → hệ chuyển dịch theo chiều thuận '
-                   '(CaCO₃ tiếp tục phân hủy). Trong lò công nghiệp, hút CO₂ liên tục '
-                   'giữ Q luôn nhỏ hơn Kc → chiều thuận luôn được ưu tiên → hiệu suất nung vôi cao.',
-        },
-        {
-            'q': 'Một học sinh nói: "Thêm CaO rắn vào bình sẽ làm cân bằng '
-                 'chuyển dịch theo chiều nghịch vì CaO là sản phẩm." '
-                 'Nhận xét đúng hay sai? Giải thích.',
-            'n': 4,
-            'ans': 'Sai.',
-            'exp': 'CaO là chất rắn nguyên chất, không xuất hiện trong biểu thức Q = [CO₂]. '
-                   'Thêm CaO không làm Q thay đổi → cân bằng không chuyển dịch. '
-                   'Chỉ khi thêm chất ở dạng khí hoặc dung dịch (có trong Q) mới ảnh hưởng.',
-        },
-    ],
-}
-
-# ──────────────────────────────────────────────
-# PX8 — Nén/giãn thể tích (hệ khí) → Q lệch Kc
-# ──────────────────────────────────────────────
-PX8 = {
-    'title': 'PX8. Nén/giãn thể tích — Q lệch Kc',
+    'title': 'PX7. Nén/giãn thể tích — Q lệch Kc',
 
     'theory': (
         'Khi nén hệ khí (giảm thể tích), nồng độ MỌI chất khí đều tăng theo cùng hệ số k. '
@@ -167,7 +71,7 @@ PX8 = {
         'Sau đó, piston được đẩy vào để giảm thể tích bình còn một nửa '
         '(nồng độ mọi chất khí tăng gấp đôi).',
         {'cap': 'Nồng độ trước và sau khi nén (giảm V còn 1/2)',
-         'label': '2.2',
+         'label': '2.1',
          'rows': [
              ['Phản ứng', 'Trước nén: Q = Kc', 'Sau nén: Q mới', 'So sánh Q mới với Kc', 'Chiều chuyển dịch'],
              ['(I) N₂ + 3H₂ ⇌ 2NH₃', 'Q = Kc', 'Q × 2^(−2) = Kc/4', 'Q mới < Kc', 'Thuận'],
@@ -220,10 +124,10 @@ PX8 = {
 }
 
 # ──────────────────────────────────────────────
-# PX9 — Thêm khí trơ → tùy điều kiện
+# PX8 — Thêm khí trơ → tùy điều kiện
 # ──────────────────────────────────────────────
-PX9 = {
-    'title': 'PX9. Thêm khí trơ — Q có đổi không?',
+PX8 = {
+    'title': 'PX8. Thêm khí trơ — Q có đổi không?',
 
     'theory': (
         'Khí trơ (Ar, Ne, He...) không phản ứng → không xuất hiện trong Q. '
@@ -267,7 +171,7 @@ PX9 = {
         '• Bình A: bình kín cứng (thể tích không đổi).',
         '• Bình B: bình có piston tự do (áp suất tổng không đổi).',
         {'cap': 'Thay đổi sau khi thêm Ar vào hai bình',
-         'label': '2.3',
+         'label': '2.2',
          'rows': [
              ['Đại lượng', 'Bình A (V không đổi)', 'Bình B (P không đổi)'],
              ['Thể tích', 'Không đổi', 'Tăng (piston dãn ra)'],
@@ -323,10 +227,10 @@ PX9 = {
 }
 
 # ──────────────────────────────────────────────
-# PX10 — Thay đổi nhiệt độ → Kc thay đổi
+# PX9 — Thay đổi nhiệt độ → Kc thay đổi
 # ──────────────────────────────────────────────
-PX10 = {
-    'title': 'PX10. Thay đổi nhiệt độ — tác động duy nhất dời Kc',
+PX9 = {
+    'title': 'PX9. Thay đổi nhiệt độ — tác động duy nhất dời Kc',
 
     'theory': (
         'Nhiệt độ là tác động DUY NHẤT thay đổi Kc.\n\n'
@@ -347,14 +251,14 @@ PX10 = {
     ],
 
     'reflex': [
-        'Đọc đề thấy "thay đổi nhiệt độ" → nghĩ ngay: đây là tác động dời Kc, khác hẳn thêm chất hay nén.',
+        'Đọc đề thấy "thay đổi nhiệt độ" → nghĩ ngay: đây là tác động dời Kc, khác hẳn nén hay thêm khí trơ.',
         'Tỏa nhiệt + tăng T → Kc giảm → nghịch. Thu nhiệt + tăng T → Kc tăng → thuận.',
     ],
 
     'trap': [
         'Tưởng tăng T luôn tăng tốc chiều thuận (thực ra chỉ tăng tốc cả hai chiều; '
         'chiều nào được ưu tiên phụ thuộc ΔH).',
-        'Nhầm: xúc tác cũng thay đổi Kc (thực ra xúc tác KHÔNG đổi Kc — xem PX11).',
+        'Nhầm: xúc tác cũng thay đổi Kc (thực ra xúc tác KHÔNG đổi Kc — xem PX10).',
     ],
 
     'figs': ['Buoi 2/image/hinh_1_3.png'],
@@ -364,7 +268,7 @@ PX10 = {
         'N₂O₄ không màu, NO₂ nâu đỏ. Khi thay đổi nhiệt độ, '
         'màu hỗn hợp thay đổi cho thấy vị trí cân bằng dịch chuyển.',
         {'cap': 'Hằng số cân bằng Kc của phản ứng N₂O₄ ⇌ 2NO₂ theo nhiệt độ',
-         'label': '2.4',
+         'label': '2.3',
          'rows': [
              ['Nhiệt độ (°C)', 'Kc (mol/L)', 'Màu hỗn hợp'],
              ['0', '0,0013', 'Gần như không màu'],
@@ -400,9 +304,9 @@ PX10 = {
                  'Nhà máy Haber chạy ở 450 °C dù % NH₃ lúc cân bằng giảm so với 350 °C. '
                  'Vì sao không hạ xuống 350 °C?',
             'n': 5,
-            'ans': 'Ở 350 °C, tốc độ phản ứng quá chậm (chỉ bằng 1/8 so với 450 °C).',
+            'ans': 'Ở 350 °C, tốc độ phản ứng quá chậm.',
             'exp': 'Giảm T → Kc tăng (tỏa nhiệt) → % NH₃ cân bằng cao hơn (35,7% vs 17,3% ở 200 bar). '
-                   'Nhưng tốc độ chỉ bằng 1/8, hệ mất rất lâu mới tiến đến cân bằng → '
+                   'Nhưng tốc độ giảm mạnh, hệ mất rất lâu mới tiến đến cân bằng → '
                    'năng suất thực tế thấp hơn. Nhà máy chọn 450 °C là sự tối ưu hóa '
                    'giữa phần trăm chuyển hóa và tốc độ đạt cân bằng.',
         },
@@ -419,10 +323,10 @@ PX10 = {
 }
 
 # ──────────────────────────────────────────────
-# PX11 — Xúc tác: tăng tốc, không đổi Kc, không đổi Q
+# PX10 — Xúc tác: tăng tốc, không đổi Kc, không đổi Q
 # ──────────────────────────────────────────────
-PX11 = {
-    'title': 'PX11. Xúc tác — nhanh hơn nhưng đích đến giữ nguyên',
+PX10 = {
+    'title': 'PX10. Xúc tác — nhanh hơn nhưng đích đến giữ nguyên',
 
     'theory': (
         'Xúc tác làm tốc độ phản ứng thuận VÀ nghịch cùng tăng → '
@@ -462,7 +366,7 @@ PX11 = {
         'Tuy nhiên, lượng O₂ thu được lúc phản ứng kết thúc (cân bằng) KHÔNG phụ thuộc '
         'có hay không có MnO₂ — chỉ thời gian đạt cân bằng thay đổi.',
         {'cap': 'So sánh có/không xúc tác: phản ứng 2SO₂ + O₂ ⇌ 2SO₃ ở 450 °C',
-         'label': '2.5',
+         'label': '2.4',
          'rows': [
              ['Điều kiện', 'Thời gian đạt cân bằng', '% SO₃ lúc cân bằng', 'Kc'],
              ['Không xúc tác', '~vài tuần', '97,5%', '1,7 × 10⁶'],
@@ -475,11 +379,11 @@ PX11 = {
 
     'questions': [
         {
-            'q': 'Dựa vào Bảng 2.5, so sánh % SO₃ lúc cân bằng có và không có xúc tác. '
+            'q': 'Dựa vào Bảng 2.4, so sánh % SO₃ lúc cân bằng có và không có xúc tác. '
                  'Giải thích vì sao Kc giữ nguyên.',
             'n': 4,
             'ans': '% SO₃ như nhau (97,5%). Kc không đổi vì nhiệt độ không đổi.',
-            'exp': 'Kc chỉ phụ thuộc nhiệt độ (PX10). Xúc tác không thay đổi nhiệt độ '
+            'exp': 'Kc chỉ phụ thuộc nhiệt độ (PX9). Xúc tác không thay đổi nhiệt độ '
                    '→ Kc giữ nguyên → vị trí cân bằng giữ nguyên → % SO₃ không đổi. '
                    'Xúc tác chỉ rút ngắn thời gian đạt cân bằng từ vài tuần xuống vài giây.',
         },
@@ -522,7 +426,7 @@ PX11 = {
 # ──────────────────────────────────────────────
 # Gom PX
 # ──────────────────────────────────────────────
-PX = [PX7, PX8, PX9, PX10, PX11]
+PX = [PX7, PX8, PX9, PX10]
 
 # ──────────────────────────────────────────────
 # DEBATE — 3 câu tranh biện cuối buổi
@@ -566,9 +470,9 @@ DEBATE = [
 # ──────────────────────────────────────────────
 SUMMARY = (
     'Buổi 2 khép lại nguyên lí Le Chatelier bằng ngôn ngữ Q/Kc:\n'
-    '• PX7–PX9: ba cách làm Q lệch Kc (thêm/bớt chất, nén/giãn, khí trơ) — '
+    '• PX7–PX8: hai cách làm Q lệch Kc (nén/giãn thể tích, thêm khí trơ) — '
     'Kc đứng yên vì nhiệt độ không đổi.\n'
-    '• PX10: nhiệt độ là tác động duy nhất dời Kc.\n'
-    '• PX11: xúc tác không đổi Q, không đổi Kc — chỉ đến cân bằng nhanh hơn.\n\n'
+    '• PX9: nhiệt độ là tác động duy nhất dời Kc.\n'
+    '• PX10: xúc tác không đổi Q, không đổi Kc — chỉ đến cân bằng nhanh hơn.\n\n'
     'Buổi sau: kiểm tra + chữa bài (5 đề TSA).'
 )
