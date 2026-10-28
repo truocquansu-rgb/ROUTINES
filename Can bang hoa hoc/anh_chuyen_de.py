@@ -17,8 +17,8 @@ ANH = [
     (1, 'PX5', 'Buoi 1/image/no_bong_H2.png', 'Nổ bóng H₂: Kc rất lớn nhưng cần tia lửa', 'ThoughtCo, "Hydrogen Balloon Explosion"', ''),
     (1, 'PX5', 'Buoi 1/image/bo_xuc_tac_o_to.png', 'Bộ xúc tác trên đường ống xả ô tô', 'DLR elib (Việt hóa)', ''),
     (1, 'PX6', 'Buoi 1/image/Q_va_K.png', 'So sánh Q với K quyết định chiều phản ứng', 'Chemistry Steps, "Reaction Quotient – Q" (Việt hóa)', ''),
-    (2, 'PX7', 'Buoi 2/image/hinh_1_4.png', 'Nồng độ và cân bằng thủy phân CH₃COONa', KNTT, ''),
-    (2, 'PX8', 'Buoi 2/image/hinh_1_5.png', 'Áp suất và cân bằng NO₂ trong xi-lanh', KNTT, 'Sau khi nén, màu nhạt bớt nhưng vẫn đậm hơn lúc chưa nén'),
+    # hinh_1_4.png (thêm chất CH₃COONa) bỏ vì PX7 gốc trùng PX3 Buổi 1
+    (2, 'PX7', 'Buoi 2/image/hinh_1_5.png', 'Áp suất và cân bằng NO₂ trong xi-lanh', KNTT, 'Sau khi nén, màu nhạt bớt nhưng vẫn đậm hơn lúc chưa nén'),
     (2, 'PX9', 'Buoi 2/image/hinh_1_2.png', 'Nhiệt độ và cân bằng 2NO₂ ⇌ N₂O₄', KNTT, 'Dạy cặp với hình tiếp theo'),
     (2, 'PX9', 'Buoi 2/image/hinh_1_3.png', 'Nhiệt độ và cân bằng thủy phân CH₃COONa', KNTT, 'Ống (2) gần cùng màu ống (1), nói rõ khi giảng'),
     (3, 'Đề 2', None, 'Sơ đồ dây chuyền tổng hợp NH₃ (vòng tuần hoàn)', 'tham khảo Lmbroomfield, "Equilibria (IB or A level chemistry)", tes.com', 'Sửa ΔH về −91,8 kJ theo SGK'),
